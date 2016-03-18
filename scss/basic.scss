@@ -1,0 +1,268 @@
+@import url(http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Open+Sans+Condensed:300,300italic,700);
+@import url(http://fonts.useso.com/css?family=Montserrat:400,700);
+
+$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$icon-font-path: "../assets/fonts/bootstrap/" !default;
+$icomoon-icon-font-path: "../assets/fonts/icomoon/" !default;
+$icomoon-icon-font-name: "icomoon" !default;
+$navbar-height: 70px !default;
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@at-root {
+  // Import the fonts
+  @font-face {
+    font-family: 'Icomoon Icon';
+    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot'));
+    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot?#iefix'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot?#iefix')) format('embedded-opentype'),
+    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.woff'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.woff')) format('woff'),
+    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.ttf'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.ttf')) format('truetype'),
+    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.svg##{$icon-font-svg-id}'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.svg##{$icon-font-svg-id}')) format('svg');
+  }
+}
+
+.icomoon-icon {
+  font-family: "Icomoon Icon" !important;
+}
+
+.icomoon-icon-facebook {
+  &:before {
+    content: "\e901";
+  }
+}
+.icomoon-icon-twitter {
+  &:before {
+    content: "\e902";
+  }
+}
+
+
+.highlight {
+  color: #e8d033;
+}
+
+.navbar-brand {
+  height: $navbar-height;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  line-height: 30px;
+}
+
+nav.navbar-fixed-top {
+  box-shadow: 1px 3px 5px;
+}
+
+.navbar .language {
+  float: right;
+  height: $navbar-height;
+  vertical-align: middle;
+  padding-top: 25px;
+  @media (max-width: $screen-xs-max) {
+    position: absolute;
+    right: 80px;
+    top: 0;
+    float: right;
+  }
+}
+
+.navbar-inverse .navbar-nav li:hover {
+  color: #fff;
+  background-color: #090909;
+}
+
+.first-container {
+  margin-top: $navbar-height;
+}
+
+.index-container {
+  height: 700px;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.index-container .flexslider {
+  border: none;
+}
+
+.index-container ul.home_slider {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.index-container ul.home_slider li {
+  overflow: hidden;
+  height: 100%;
+}
+
+.index-container .flexslider {
+  height: 100%;
+  margin-bottom: 0px;
+}
+
+#home .flex-caption {
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  height: auto;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+#home .flex-caption span.glyphicon-play-circle {
+  font-size: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  @include opacity(0);
+  cursor: pointer;
+}
+
+#home .flex-caption .animated {
+  visibility: hidden;
+}
+
+#home .flex-caption h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 4.5em;
+  font-weight: 800;
+  top: 0;
+  left: auto;
+  position: relative;
+  margin: 10px auto;
+  @media (max-width: $screen-sm-max) {
+    font-size: 3em;
+  }
+  font-family: 'Montserrat', sans-serif;
+}
+
+.index-container .flexslider .item > img {
+  @include transition(all 1s ease);
+}
+
+.index-container .flexslider .item:hover > img {
+
+  @include scale(1.25);
+}
+
+//.index-container mask
+.index-container .mask{
+  position: absolute;
+  z-index: 1001;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(33,33, 33, 0.3);
+  //visibility: hidden;
+}
+.index-container .mask .container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.index-container .mask > .container-fluid >  .colum{
+  position: fixed;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+  height: 700px;
+  border-right: 3px solid #bbbab8;
+  background-color: #f2f2f2;
+}
+.index-container .mask .news h2{
+  background: url(../assets/images/home/news_title_bg.png) top center no-repeat transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 142px;
+  width: 100%;
+  height: 165px;
+  margin: 0 0 15px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.index-container .mask > .container-fluid > .colum .glyphicon-remove{
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.index-container .mask .news_list .colum{
+  padding-left: 0;
+  padding-right: 0;
+  height: 240px;
+}
+.index-container .mask .news_list img{
+  width: 100% !important;
+}
+.index-container .mask .news_list .content{
+  padding: 60px 50px;
+}
+
+
+
+
+
+  //footer div
+.navbar-fixed-bottom {
+  min-height: 50px;
+  box-shadow: -1px -3px 10px;
+  background-color: white;
+  @include opacity(0.4);
+  border: 0px;
+}
+
+.navbar-fixed-bottom ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.navbar-fixed-bottom:hover {
+  @include opacity(0.8);
+}
+.navbar-fixed-bottom ul li {
+  display: inline-block;
+}
+
+.navbar-fixed-bottom ul li a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 15px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.navbar-fixed-bottom ul li a:active, .navbar-fixed-bottom ul li a.active {
+  background-color: black;
+  color: white;
+  @include opacity(1);
+}
+.navbar-fixed-bottom ul.pull-right a{
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-fixed-bottom ul.pull-right a.icomoon-icon-facebook:hover{
+  color: #3a5795;
+}
+
+.navbar-fixed-bottom ul.pull-right a.icomoon-icon-twitter:hover{
+  color: #1da1f2;
+}
+
