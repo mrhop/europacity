@@ -8966,7 +8966,7 @@ nav.navbar-fixed-top {
   top: 0;
   bottom: 0;
   background-color: rgba(33, 33, 33, 0.3);
-  display: none;
+  display: block;
 }
 
 /* line 167, ../../scss/basic.scss */
@@ -8975,12 +8975,17 @@ nav.navbar-fixed-top {
 }
 
 /* line 171, ../../scss/basic.scss */
+.index-container .mask > .container-fluid.press {
+  visibility: visible;
+}
+
+/* line 175, ../../scss/basic.scss */
 .index-container .mask .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 176, ../../scss/basic.scss */
+/* line 180, ../../scss/basic.scss */
 .index-container .mask > .container-fluid > .colum {
   position: fixed;
   padding-left: 0;
@@ -8991,9 +8996,8 @@ nav.navbar-fixed-top {
   background-color: #f2f2f2;
 }
 
-/* line 186, ../../scss/basic.scss */
-.index-container .mask .news h2 {
-  background: url(../assets/images/home/news_title_bg.png) top center no-repeat transparent;
+/* line 190, ../../scss/basic.scss */
+.index-container .mask .container-fluid h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: bold;
@@ -9007,14 +9011,24 @@ nav.navbar-fixed-top {
   color: #2e2e2e;
 }
 
-/* line 201, ../../scss/basic.scss */
+/* line 204, ../../scss/basic.scss */
+.index-container .mask .news h2 {
+  background: url(../assets/images/home/news_title_bg.png) top center no-repeat transparent;
+}
+
+/* line 208, ../../scss/basic.scss */
+.index-container .mask .press h2 {
+  background: url(../assets/images/home/press_title_bg.png) top center no-repeat transparent;
+}
+
+/* line 212, ../../scss/basic.scss */
 .index-container .mask > .container-fluid > .colum .glyphicon-remove {
   padding: 15px;
   font-size: 20px;
   cursor: pointer;
 }
 
-/* line 208, ../../scss/basic.scss */
+/* line 219, ../../scss/basic.scss */
 .index-container .mask .news_list .colum {
   padding-left: 0;
   padding-right: 0;
@@ -9022,7 +9036,7 @@ nav.navbar-fixed-top {
   overflow: hidden;
 }
 
-/* line 215, ../../scss/basic.scss */
+/* line 226, ../../scss/basic.scss */
 .index-container .mask .news_list img {
   width: 100% !important;
   height: 240px;
@@ -9031,7 +9045,7 @@ nav.navbar-fixed-top {
   transition: all 1s ease;
 }
 
-/* line 221, ../../scss/basic.scss */
+/* line 232, ../../scss/basic.scss */
 .index-container .mask .news_list img:hover {
   width: 100% !important;
   height: 240px;
@@ -9041,17 +9055,17 @@ nav.navbar-fixed-top {
   transform: scale(1.1);
 }
 
-/* line 227, ../../scss/basic.scss */
+/* line 238, ../../scss/basic.scss */
 .index-container .mask .news_list .content {
   padding: 60px 50px;
 }
 
-/* line 231, ../../scss/basic.scss */
+/* line 242, ../../scss/basic.scss */
 .index-container .mask .news_list .content:hover {
   background-color: #d4d4d4;
 }
 
-/* line 235, ../../scss/basic.scss */
+/* line 246, ../../scss/basic.scss */
 .index-container .mask .news_list .content .date {
   margin-bottom: 5px;
   font-size: 11px;
@@ -9062,7 +9076,7 @@ nav.navbar-fixed-top {
   text-transform: uppercase;
 }
 
-/* line 245, ../../scss/basic.scss */
+/* line 256, ../../scss/basic.scss */
 .index-container .mask .news_list .content .news_title h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 17px;
@@ -9075,7 +9089,7 @@ nav.navbar-fixed-top {
   font-weight: bold;
 }
 
-/* line 257, ../../scss/basic.scss */
+/* line 268, ../../scss/basic.scss */
 .index-container .mask .news_list .content .news_description p {
   font-size: 14px;
   line-height: 19px;
@@ -9085,7 +9099,86 @@ nav.navbar-fixed-top {
   color: #818181;
 }
 
-/* line 267, ../../scss/basic.scss */
+/* line 278, ../../scss/basic.scss */
+.mask .press_list .colum {
+  margin-bottom: 8px;
+  color: #afafaf;
+  border-bottom: 2px solid #ececec;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+
+/* line 286, ../../scss/basic.scss */
+.mask .press_list .colum.bottom {
+  border-bottom: 0px;
+  margin-bottom: 240px;
+  height: 0;
+}
+
+/* line 292, ../../scss/basic.scss */
+.mask .press_element_date {
+  width: 90px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* line 297, ../../scss/basic.scss */
+.mask .press_element_date span {
+  display: block;
+}
+
+/* line 300, ../../scss/basic.scss */
+.mask .press_element_date .day_month {
+  font-size: 11px;
+}
+
+/* line 303, ../../scss/basic.scss */
+.press_element_date .separator {
+  text-align: center;
+}
+
+/* line 306, ../../scss/basic.scss */
+.press_element_date .separator span {
+  display: inline-block;
+  width: 5px;
+  height: 1px;
+  margin: 2px 0;
+  background-color: #afafaf;
+}
+
+/* line 313, ../../scss/basic.scss */
+.mask .press_element_date .year {
+  font-size: 14px;
+  color: #d78d8d;
+}
+
+/* line 317, ../../scss/basic.scss */
+.mask .press_element_title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  line-height: 30px;
+  width: 520px;
+  padding: 20px 0;
+}
+
+/* line 325, ../../scss/basic.scss */
+.mask .press_element_download {
+  padding: 20px;
+}
+
+/* line 329, ../../scss/basic.scss */
+.mask .press_element_download a {
+  background-color: #c8dd9a;
+  font-family: Univers-Lt-Std;
+  font-size: 19px;
+  display: block;
+  padding: 9px 18px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* line 340, ../../scss/basic.scss */
 .navbar-fixed-bottom {
   min-height: 50px;
   box-shadow: -1px -3px 10px;
@@ -9095,25 +9188,25 @@ nav.navbar-fixed-top {
   border: 0px;
 }
 
-/* line 275, ../../scss/basic.scss */
+/* line 348, ../../scss/basic.scss */
 .navbar-fixed-bottom ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
 }
 
-/* line 281, ../../scss/basic.scss */
+/* line 354, ../../scss/basic.scss */
 .navbar-fixed-bottom:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
 
-/* line 285, ../../scss/basic.scss */
+/* line 358, ../../scss/basic.scss */
 .navbar-fixed-bottom ul li {
   display: inline-block;
 }
 
-/* line 289, ../../scss/basic.scss */
+/* line 362, ../../scss/basic.scss */
 .navbar-fixed-bottom ul li a {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -9127,7 +9220,7 @@ nav.navbar-fixed-top {
   cursor: pointer;
 }
 
-/* line 302, ../../scss/basic.scss */
+/* line 375, ../../scss/basic.scss */
 .navbar-fixed-bottom ul li a:active, .navbar-fixed-bottom ul li a.active {
   background-color: black;
   color: white;
@@ -9135,19 +9228,19 @@ nav.navbar-fixed-top {
   filter: alpha(opacity=100);
 }
 
-/* line 308, ../../scss/basic.scss */
+/* line 381, ../../scss/basic.scss */
 .navbar-fixed-bottom ul.pull-right a {
   font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* line 314, ../../scss/basic.scss */
+/* line 387, ../../scss/basic.scss */
 .navbar-fixed-bottom ul.pull-right a.icomoon-icon-facebook:hover {
   color: #3a5795;
 }
 
-/* line 318, ../../scss/basic.scss */
+/* line 391, ../../scss/basic.scss */
 .navbar-fixed-bottom ul.pull-right a.icomoon-icon-twitter:hover {
   color: #1da1f2;
 }

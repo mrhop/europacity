@@ -161,11 +161,15 @@ nav.navbar-fixed-top {
   top: 0;
   bottom: 0;
   background-color: rgba(33, 33, 33, 0.3);
-  display: none;
+  display: block;
 }
 
 .index-container .mask > .container-fluid {
   visibility: hidden;
+}
+
+.index-container .mask > .container-fluid.press {
+  visibility: visible;
 }
 
 .index-container .mask .container-fluid {
@@ -183,8 +187,7 @@ nav.navbar-fixed-top {
   background-color: #f2f2f2;
 }
 
-.index-container .mask .news h2 {
-  background: url(../assets/images/home/news_title_bg.png) top center no-repeat transparent;
+.index-container .mask .container-fluid h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: bold;
@@ -196,6 +199,14 @@ nav.navbar-fixed-top {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #2e2e2e;
+}
+
+.index-container .mask .news h2 {
+  background: url(../assets/images/home/news_title_bg.png) top center no-repeat transparent;
+}
+
+.index-container .mask .press h2 {
+  background: url(../assets/images/home/press_title_bg.png) top center no-repeat transparent;
 }
 
 .index-container .mask > .container-fluid > .colum .glyphicon-remove {
@@ -263,6 +274,68 @@ nav.navbar-fixed-top {
   color: #818181;
 }
 
+//home press
+.mask .press_list .colum {
+  margin-bottom: 8px;
+  color: #afafaf;
+  border-bottom: 2px solid #ececec;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+
+.mask .press_list .colum.bottom{
+  border-bottom: 0px;
+  margin-bottom: 240px;
+  height: 0;
+}
+
+.mask .press_element_date {
+  width: 90px;
+  padding: 20px;
+  text-align: center;
+}
+.mask .press_element_date span{
+  display: block;
+}
+.mask .press_element_date .day_month {
+  font-size: 11px;
+}
+.press_element_date .separator {
+  text-align: center;
+}
+.press_element_date .separator span {
+  display: inline-block;
+  width: 5px;
+  height: 1px;
+  margin: 2px 0;
+  background-color: #afafaf;
+}
+.mask .press_element_date .year {
+  font-size: 14px;
+  color: #d78d8d;
+}
+.mask .press_element_title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  line-height: 30px;
+  width: 520px;
+  padding: 20px 0;
+}
+
+.mask .press_element_download {
+  padding: 20px;
+}
+
+.mask .press_element_download a{
+  background-color: #c8dd9a;
+font-family: Univers-Lt-Std;
+font-size: 19px;
+display: block;
+padding: 9px 18px;
+vertical-align: middle;
+text-transform: uppercase;
+color: #fff;
+}
 //footer div
 .navbar-fixed-bottom {
   min-height: 50px;
