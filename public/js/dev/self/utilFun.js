@@ -15,6 +15,15 @@ module.exports = (function ($, window, undefined) {
                 });
             })
         },
+        animateWithAction: function (obj,action,actionremove,callback) {
+            $(obj).each(function () {
+                $(this).removeClass(actionremove).addClass(action).css('visibility', 'visible').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    if(callback){
+                        callback();
+                    }
+                });
+            })
+        },
         hide: function (obj) {
             $(obj).each(function () {
                 $(this).css('visibility', 'hidden');

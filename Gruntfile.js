@@ -47,6 +47,12 @@ module.exports = function (grunt) {
                 },{
                     expand: true,
                     flatten: true,
+                    src: ['node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css'],
+                    dest: 'public/css/perfect-scrollbar/',
+                    filter: 'isFile'
+                },{
+                    expand: true,
+                    flatten: true,
                     src: ['node_modules/flexslider/flexslider.css'],
                     dest: 'public/css/flexslider/'
                 },{
