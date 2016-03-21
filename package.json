@@ -33,6 +33,8 @@
     "easing": "./node_modules/jquery.easing/jquery.easing.min.js",
     "scrollspy": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js",
     "smoothscroll": "./node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js",
+    "mixitup": "./bower_components/mixitup/build/jquery.mixitup.min.js",
+    "fancybox": "./bower_components/fancybox/source/jquery.fancybox.pack.js",
     "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js",
     "utilFun": "./public/js/dev/self/utilFun.js"
   },

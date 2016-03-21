@@ -70,6 +70,12 @@ module.exports = function (grunt) {
                     flatten: true,
                     src: ['node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'],
                     dest: 'public/js/dev/'
+                },{
+                    expand: true,
+                    flatten: true,
+                    isfile:true,
+                    src: ['bower_components/fancybox/source/jquery.fancybox.css','bower_components/fancybox/source/*.gif','bower_components/fancybox/source/*.png'],
+                    dest: 'public/css/fancybox/'
                 }]
             }
         },

@@ -11,5 +11,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "mixitup": "~2.1.11",
+    "fancybox": "~2.1.5"
+  }
 }
