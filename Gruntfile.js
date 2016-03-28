@@ -77,6 +77,14 @@ module.exports = function (grunt) {
                     src: ['bower_components/fancybox/source/jquery.fancybox.css','bower_components/fancybox/source/*.gif','bower_components/fancybox/source/*.png'],
                     dest: 'public/css/fancybox/'
                 }]
+            },main: {
+                files:[
+                    {expand: true,cwd: 'public/', src: ['*.html'], dest: 'dest/', filter: 'isFile'},
+                    {expand: true,cwd: 'public/', src: ['assets/**'], dest: 'dest/'},
+                    {expand: true,cwd: 'public/',  src: ['js/basic.browserify.min.js'], dest: 'dest/', filter: 'isFile'},
+                    {expand: true,cwd: 'public/',  src: ['js/dev/holder.min.js'], dest: 'dest/', filter: 'isFile'},
+                    {expand: true,cwd: 'public/',  src: ['css/**'], dest: 'dest/', filter: 'isFile'}
+                ]
             }
         },
         browserify: {
@@ -92,7 +100,7 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'public/js/basic.browserify.min.js': ['public/js/dev/self/basic.browserify.js']
+                    'public/js/basic.browserify.min.js': ['public/js/basic.browserify.js']
                 }
             }
         },
@@ -115,5 +123,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.registerTask('build', "Builds the application.",
-        ['compass:prod', 'browserify:basic', 'uglify']);
+        ['compass:prod', 'browserify:basic', 'uglify','copy:main']);
 }
