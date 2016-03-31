@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eurocity</title>
+    <link href="css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="css/animate/animate.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/flexslider/flexslider.css" rel="stylesheet" type="text/css"/>
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body style="position: relative;background: #000000;">
+<div style="position: relative;z-index: 1">
+    <div id="ano"
+         style="position:absolute;top: 0px;left: 0%; width: 20%;height: 11px;background:url('assets/images/common/arrow_white.png') 50% -11px no-repeat;"
+         class="animated"></div>
+</div>
+<div style="z-index: 100;position: relative;">
+<button id="test" style="display: block;">test</button></div>
+<script>
+    $("#test").click(function () {
+        $("#ano").css("left", "20%")
+        $("#ano").addClass("slideInLeft")
+    })
+</script>
+</body>
+</html>

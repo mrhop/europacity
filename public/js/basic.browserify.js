@@ -11699,7 +11699,7 @@ require("mixitup");
 require("fancybox");
 var utilFun = require("utilFun");
 $(document).ready(function () {
-    if ($("#home")) {
+    if ($("#home").size()>0) {
         var home_section_flag = true;
         var media_first_flag = true;
         $('#home .flexslider').flexslider({
@@ -11877,6 +11877,14 @@ $(document).ready(function () {
                     }
                 }
             });
+        });
+    }else if ($("#page2").size()>0) {
+        $('#page2 .first-container .flexslider').flexslider({
+            directionNav: false,
+            animationSpeed: 500,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "fade"
         });
     }
 });
