@@ -10,9 +10,14 @@ require("bootstrap");
 require('perfect-scrollbar/jquery')($);
 require("mixitup");
 require("fancybox");
+// Load ScrollMagic
+var ScrollMagic = require('scrollmagic');
+// Load plugins
+require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap');
+require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators');
 var utilFun = require("utilFun");
 $(document).ready(function () {
-    if ($("#home").size()>0) {
+    if ($("#home").size() > 0) {
         var home_section_flag = true;
         var media_first_flag = true;
         $('#home .flexslider').flexslider({
@@ -57,7 +62,7 @@ $(document).ready(function () {
                     $(".navbar-fixed-bottom .pull-left li").removeClass("active")
                     $(this).addClass("active")
                     $(".navbar-fixed-bottom").css("opacity", 1);
-                    $(".mask").css("visibility","visible");
+                    $(".mask").css("visibility", "visible");
                     utilFun.animateWithAction($(".mask .container-fluid.news"), "fadeInLeft", "fadeOutLeft", function () {
                         $(".mask .container-fluid.news").addClass("active");
                         home_section_flag = true;
@@ -83,7 +88,7 @@ $(document).ready(function () {
                     $(".navbar-fixed-bottom .pull-left li").removeClass("active")
                     $(this).addClass("active")
                     $(".navbar-fixed-bottom").css("opacity", 1);
-                    $(".mask").css("visibility","visible");
+                    $(".mask").css("visibility", "visible");
                     utilFun.animateWithAction($(".mask > .container-fluid.press"), "fadeInLeft", "fadeOutLeft", function () {
                         $(".mask > .container-fluid.press").addClass("active");
                         home_section_flag = true;
@@ -102,9 +107,9 @@ $(document).ready(function () {
                         $('#home .media-a').addClass("active")
                         utilFun.animateWithAction($(".mask > .container-fluid.media"), "fadeInLeft", "fadeOutLeft", function () {
                             $(".mask > .container-fluid.media").addClass("active")
-                            if(media_first_flag){
+                            if (media_first_flag) {
                                 $('.portfoliolist').mixItUp();
-                                media_first_flag=false;
+                                media_first_flag = false;
                             }
                             home_section_flag = true;
                         });
@@ -113,12 +118,12 @@ $(document).ready(function () {
                     $(".navbar-fixed-bottom .pull-left li").removeClass("active")
                     $(this).addClass("active")
                     $(".navbar-fixed-bottom").css("opacity", 1);
-                    $(".mask").css("visibility","visible");
+                    $(".mask").css("visibility", "visible");
                     utilFun.animateWithAction($(".mask > .container-fluid.media"), "fadeInLeft", "fadeOutLeft", function () {
                         $(".mask > .container-fluid.media").addClass("active");
-                        if(media_first_flag){
+                        if (media_first_flag) {
                             $('.portfoliolist').mixItUp();
-                            media_first_flag=false;
+                            media_first_flag = false;
                         }
                         home_section_flag = true;
                     });
@@ -144,7 +149,7 @@ $(document).ready(function () {
                     $(".navbar-fixed-bottom .pull-left li").removeClass("active")
                     $(this).addClass("active")
                     $(".navbar-fixed-bottom").css("opacity", 1);
-                    $(".mask").css("visibility","visible");
+                    $(".mask").css("visibility", "visible");
                     utilFun.animateWithAction($(".mask > .container-fluid.contact"), "fadeInLeft", "fadeOutLeft", function () {
                         $(".mask > .container-fluid.contact").addClass("active");
                         home_section_flag = true;
@@ -157,7 +162,7 @@ $(document).ready(function () {
             if (event.target.className == "mask" && home_section_flag) {
                 home_section_flag = false;
                 utilFun.animateWithAction($(this).children(".container-fluid.active"), "fadeOutLeft", "fadeInLeft", function () {
-                    $(".mask").css("visibility","hidden");
+                    $(".mask").css("visibility", "hidden");
                     $(".navbar-fixed-bottom").css("opacity", "");
                     $(".mask > .container-fluid").removeClass("active");
                     $(".navbar-fixed-bottom .pull-left a").removeClass("active")
@@ -169,7 +174,7 @@ $(document).ready(function () {
             if (home_section_flag) {
                 home_section_flag = false;
                 utilFun.animateWithAction($(this).parent().parent(), "fadeOutLeft", "fadeInLeft", function () {
-                    $(".mask").css("visibility","hidden");
+                    $(".mask").css("visibility", "hidden");
                     $(".navbar-fixed-bottom").css("opacity", "");
                     $(".mask > .container-fluid").removeClass("active");
                     $(".navbar-fixed-bottom .pull-left a").removeClass("active")
@@ -191,14 +196,48 @@ $(document).ready(function () {
                 }
             });
         });
-    }else if ($("#page2").size()>0) {
+    } else if ($("#page2").size() > 0) {
         $('#page2 .first-container .flexslider').flexslider({
             directionNav: false,
-            animationSpeed: 500,
+            controlNav: true,
+            controlsContainer: ".first-container",
+            manualControls: ".first-container .control-nav li.control-label",
+            animationSpeed: 1000,
             slideshowSpeed: 3000,
             slideshow: true,
-            animation: "fade"
+            animation: "fade",
+            start: function (slider) {
+                $("#page2 .first-container  .slider_tip").css("left", slider.currentSlide * 14 + "%")
+                utilFun.animate("#page2 .first-container .slider_tip");
+            },
+            after: function () {
+                $("#page2 .first-container .slider_tip").removeClass("slideInLeft").removeClass("slideInRight");
+            },
+            before: function (slider) {
+                if (slider.animatingTo > slider.currentSlide) {
+                    $("#page2 .first-container .slider_tip").css("left", slider.animatingTo * 14 + "%")
+                    utilFun.animateWithAction("#page2 .first-container .slider_tip", "slideInLeft", "slideInRight");
+                } else {
+                    $("#page2 .first-container .slider_tip").css("left", slider.animatingTo * 14 + "%")
+                    utilFun.animateWithAction("#page2 .first-container .slider_tip", "slideInRight", "slideInLeft");
+                }
+            }
         });
+
+        //thiid section
+        var controller = new ScrollMagic.Controller();
+        new ScrollMagic.Scene({triggerElement: ".third-container .trigger_photo", duration: 300})
+            .setTween(".third-container .arrow", {top: "0"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".third-container .trigger_photo", duration: 300})
+            .setTween(".third-container .img", {top: "100px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".third-container .top", duration: 500})
+            .setTween(".third-container .top", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".third-container .top p:nth-child(1)", duration: 200})
+            .setTween(".third-container .bottom", {opacity: 1})
+            .addTo(controller);
     }
 });
 
