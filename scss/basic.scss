@@ -1,4 +1,4 @@
-@import url(http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic|Montserrat:400,700|Oswald:400,300,700);
+@import url(http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic|Montserrat:400,700|Oswald:400,300,700|Candal);
 $font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $icon-font-path: "../assets/fonts/bootstrap/" !default;
 $icomoon-icon-font-path: "../assets/fonts/icomoon/" !default;
@@ -69,7 +69,19 @@ $navbar-height: 70px !default;
 .container-fluid, .container {
   text-align: center;
 }
+p.comment, span.comment {
+  width: 600px;
+  color: #9a9a9a;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 19px;
+  margin: 0 auto 64px;
+}
 
+span.comment {
+  width: auto;
+  display: inline;
+}
 .navbar-brand {
   height: $navbar-height;
   padding-top: 20px;
@@ -778,24 +790,15 @@ nav.navbar-fixed-top {
   position: relative;
 }
 
+#page2 .fourth-container .central p.comment{
+  @include opacity(0);
+}
+
 #page2 .fourth-container h4 {
   margin: 0 auto 25px;
 }
 
-p.comment, span.comment {
-  width: 600px;
-  color: #9a9a9a;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 19px;
-  margin: 0 auto 64px;
-  @include opacity(0);
-}
 
-span.comment {
-  width: auto;
-  display: inline;
-}
 
 #page2 .fourth-container ul {
   list-style: none;
@@ -870,7 +873,6 @@ span.comment {
 
 #page2 .sixth-container p.comment {
   margin-bottom: 136px;
-  @include opacity(1);
 }
 
 #page2 .sixth-container ul.control-nav {
@@ -1105,9 +1107,7 @@ span.comment {
   color: #ffffff;
 }
 
-#page3 .third-container p.comment {
-  @include opacity(1);
-}
+
 
 #page3 .third-container ul {
   list-style: none;
@@ -1178,3 +1178,64 @@ span.comment {
   line-height: 24px;
   font-size: 13px;
 }
+
+//page4
+#page4 .first-container h4{
+  margin-bottom: 30px;
+}
+#page4 .first-container .comment{
+  width: auto;
+  color: #000;
+  margin-bottom: 50px;
+}
+#page4 .first-container ul{
+  width: 1000px;
+  list-style: none;
+  margin: 20px auto 0;
+  padding: 0;
+}
+#page4 .first-container ul li{
+  width: 19%;
+  padding:10px 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+#page4 .first-container ul .comment{
+  width: auto;
+  margin: 10px auto 0;
+  color: #7f7f7f;
+  font-size: 13px;
+}
+
+#page4 .second-container{
+  background: #f3f1dc;
+}
+#page4 .second-container ul{
+  list-style: none;
+  padding: 0;
+}
+
+#page4 .second-container ul li{
+  display: inline-block;
+  font-size: 60px;
+  font-weight: bold;
+  height: 120px;
+  vertical-align: middle;
+  letter-spacing: -2px;
+  line-height: 120px;
+  font-family: 'Candal', sans-serif;
+}
+#page4 .second-container ul li span{
+  display: inline-block;
+}
+
+#page4 .second-container ul li .text{
+  height: 80px;
+  vertical-align: middle;
+}
+#page4 .second-container ul li .text p{
+  line-height:40px;
+  font-size: 0.8em;
+  margin: 0;
+}
+
