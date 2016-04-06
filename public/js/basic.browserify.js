@@ -23243,20 +23243,10 @@ $(document).ready(function () {
             slideshow: true,
             animation: "fade",
             start: function (slider) {
-                $("#page2 .first-container  .slider_tip").css("left", slider.currentSlide * 14 + "%")
-                utilFun.animate("#page2 .first-container .slider_tip");
-            },
-            after: function () {
-                $("#page2 .first-container .slider_tip").removeClass("slideInLeft").removeClass("slideInRight");
+                $("#page2 .first-container  .slider_tip").css("left", (slider.currentSlide * 14 + 7) + "%")
             },
             before: function (slider) {
-                if (slider.animatingTo > slider.currentSlide) {
-                    $("#page2 .first-container .slider_tip").css("left", slider.animatingTo * 14 + "%")
-                    utilFun.animateWithAction("#page2 .first-container .slider_tip", "slideInLeft", "slideInRight");
-                } else {
-                    $("#page2 .first-container .slider_tip").css("left", slider.animatingTo * 14 + "%")
-                    utilFun.animateWithAction("#page2 .first-container .slider_tip", "slideInRight", "slideInLeft");
-                }
+                $("#page2 .first-container .slider_tip").css("left", (slider.animatingTo * 14 + 7) + "%")
             }
         });
 
@@ -23274,6 +23264,98 @@ $(document).ready(function () {
         new ScrollMagic.Scene({triggerElement: ".third-container .top p:nth-child(1)", duration: 200})
             .setTween(".third-container .bottom", {opacity: 1})
             .addTo(controller);
+
+        new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_p", duration: 100})
+            .setTween(".fourth-container .central p.comment", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_img1", duration: 400})
+            .setTween(".fourth-container .central li:nth-child(1) img", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_img2", duration: 400})
+            .setTween(".fourth-container .central li:nth-child(2) img", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_img3", duration: 400})
+            .setTween(".fourth-container .central li:nth-child(3) img", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_img4", duration: 400})
+            .setTween(".fourth-container .central li:nth-child(4) img", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_img5", duration: 400})
+            .setTween(".fourth-container .central li:nth-child(5) img", {opacity: 1})
+            .addTo(controller);
+
+        $('#page2 .sixth-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".sixth-container",
+            manualControls: ".sixth-container .control-nav li",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "slide",
+            start: function (slider) {
+                $("#page2 .sixth-container  .slider_tip").css("left", (slider.currentSlide * 20 + 10) + "%")
+            },
+            before: function (slider) {
+                $("#page2 .sixth-container .slider_tip").css("left", (slider.animatingTo * 20 + 10) + "%")
+            }
+        });
+    } else if ($("#page3").size() > 0) {
+        var interruptDistanceFun;
+        var interruptMinuteFun;
+        $('#page3 .second-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".second-container",
+            manualControls: ".second-container .control-nav li",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "fade",
+            start: function (slider) {
+                $("#page3 .second-container  .circle_current").css("left", (slider.currentSlide * 14.6 + 12.2) + "%");
+                var begin = Number($(".second-container .holder .distance .value").data("value"));
+                var end = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance"));
+                interruptDistanceFun = utilFun.numberValueChange("number", begin, end, $(".second-container .holder .distance .value"), 80);
+                var beginDate = Number($(".second-container .holder .time .value").data("value"));
+                var endDate = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("time"));
+                interruptMinuteFun = utilFun.numberValueChange("minute", beginDate, endDate, $(".second-container .holder .time .value"), 80);
+
+            },
+            before: function (slider) {
+                $("#page3 .second-container .circle_current").css("left", (slider.animatingTo * 14.6 + 12.2) + "%");
+                var begin = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance"));
+                var end = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.animatingTo + 1) + ")").data("distance"));
+                interruptDistanceFun = utilFun.numberValueChange("number", begin, end, $(".second-container .holder .distance .value"), 80);
+                var beginDate = Number($(".second-container .holder .time .value").data("value"));
+                var endDate = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.animatingTo + 1) + ")").data("time"));
+                interruptMinuteFun = utilFun.numberValueChange("minute", beginDate, endDate, $(".second-container .holder .time .value"), 80);
+            }, after: function (slider) {
+                if (interruptDistanceFun) {
+                    utilFun.numberValueInterrupt("number", Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance")), $(".second-container .holder .distance .value"), interruptDistanceFun);
+                }
+                if (interruptMinuteFun) {
+                    utilFun.numberValueInterrupt("minute", Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("time")), $(".second-container .holder .time .value"), interruptDistanceFun);
+                }
+            }
+        });
+        var controller = new ScrollMagic.Controller();
+        new ScrollMagic.Scene({
+            triggerElement: "#page3 .third-container h4",
+            duration: 200
+        })
+            .addTo(controller)
+            .on("enter", function (e) {
+                if (e.type == "enter") {
+                    $("#page3 .third-container ul.number span.number").each(function () {
+                        var begin = Number($(this).text());
+                        var end = Number($(this).data("value"));
+                        if (begin != end) {
+                            utilFun.numberValueChange("number", begin, end, $(this), 80);
+                        }
+                    })
+                }
+            })
     }
 });
 
@@ -23296,10 +23378,10 @@ module.exports = (function ($, window, undefined) {
                 });
             })
         },
-        animateWithAction: function (obj,action,actionremove,callback) {
+        animateWithAction: function (obj, action, actionremove, callback) {
             $(obj).each(function () {
                 $(this).removeClass(actionremove).addClass(action).css('visibility', 'visible').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                    if(callback){
+                    if (callback) {
                         callback();
                     }
                 });
@@ -23315,7 +23397,59 @@ module.exports = (function ($, window, undefined) {
                 $(this).removeClass($(this).data("animated"));
             })
         },
+        numberValueChange: function (type, begin, end, Object, interval, dataChangeTimes) {
+            if (begin != end) {
+                dataChangeTimes = dataChangeTimes ? dataChangeTimes : 10;
+                var data = Math.abs(begin - end);
+                if(data<10){
+                    dataChangeTimes = data
+                }
+                var dataInterval = parseInt(data / dataChangeTimes);
+                var lastData = Math.abs(begin - end) % dataChangeTimes;
+                if (lastData != 0) {
+                    dataChangeTimes += 1;
+                }
+                var beginTimes = 0;
+                var intervalFun = window.setInterval(function () {
+                    beginTimes += 1;
+                    if (beginTimes < dataChangeTimes) {
+                        if (begin > end) {
+                            begin = begin - dataInterval
+                        } else {
+                            begin = begin + dataInterval
+                        }
+                    } else {
+                        if (begin > end) {
+                            begin = begin - (lastData==0?dataInterval:lastData)
+                        } else {
+                            begin = begin + (lastData==0?dataInterval:lastData)
+                        }
+                    }
+                    if (type == "number") {
+                        $(Object).text(begin);
+                    }else if(type=="minute"){
+                        $(Object).text(parseInt(begin/60)+":"+begin%60);
+                    }
+                    if (begin == end) {
+                        window.clearInterval(intervalFun);
+                        $(Object).data("value", begin);
+                    }
+                }, interval ? interval : 100);
+                return intervalFun;
+            }
+            return null;
+        },
+        numberValueInterrupt: function (type,data, object, intervalFun) {
+            window.clearInterval(intervalFun);
+            if (type == "number") {
+                $(Object).text(data);
+            }else if(type=="minute"){
+                $(Object).text(parseInt(data/60)+":"+data%60);
+            }
+            $(object).data("value", data);
+        }
     };
     return new $.UtilFun();
-})(jQuery, window)
+})
+(jQuery, window)
 },{}]},{},[36]);
