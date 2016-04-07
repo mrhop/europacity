@@ -23356,6 +23356,29 @@ $(document).ready(function () {
                     })
                 }
             })
+    } else if ($("#page4").size() > 0) {
+        $('#page4 .second-container .flexslider').flexslider({
+            directionNav: true,
+            controlNav: false,
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: false,
+            animation: "fade",
+            customDirectionNav: $(".custom-navigation a")
+        });
+        $('#page4 .third-container .bottom .icon').click(function () {
+            $("#page4 .third-container .bottom .mask").css("visibility", "visible").css("opacity", 1);;
+            $("#page4 .third-container .bottom .icon").css("visibility", "hidden").css("opacity", 0);
+            $("#page4 .third-container .bottom .icon" + "." + $(this).data("type")).css("visibility", "visible").css("opacity", 1);
+            $("#page4 .third-container .bottom  div.content").css("visibility", "hidden").css("opacity", 0);
+            $("#page4 .third-container .bottom div.content" + "." + $(this).data("type")).css("visibility", "visible").css("opacity", 1);
+        })
+
+        $("#page4 .third-container .bottom .mask").click(function () {
+            $("#page4 .third-container .bottom .icon").css("visibility", "visible").css("opacity", 1);
+            $("#page4 .third-container .bottom  div.content").css("visibility", "hidden").css("opacity", 0);
+            $(this).css("visibility", "hidden").css("opacity", 0);
+        })
     }
 });
 

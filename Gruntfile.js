@@ -8,6 +8,7 @@ module.exports = function (grunt) {
                 options: {
                     force: true,
                     sassDir: ['scss'],
+                    specify: 'scss/basic.scss',
                     cssDir: ['public/css'],
                     environment: 'development'
                 }
@@ -16,6 +17,7 @@ module.exports = function (grunt) {
                 options: {
                     force: true,
                     sassDir: ['scss'],
+                    specify: 'scss/basic.scss',
                     cssDir: ['public/css'],
                     environment: 'production'
                 }

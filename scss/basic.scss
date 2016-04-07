@@ -1,22 +1,21 @@
-@import url(http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic|Montserrat:400,700|Oswald:400,300,700|Candal);
-$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$icon-font-path: "../assets/fonts/bootstrap/" !default;
+@import "googleFonts.scss";
+@import "compass/css3";
+
 $icomoon-icon-font-path: "../assets/fonts/icomoon/" !default;
 $icomoon-icon-font-name: "icomoon" !default;
+@font-face {
+  font-family: 'Icomoon Icon';
+  src: url('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot');
+  src: url('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot?#iefix') format('embedded-opentype'),
+  url('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.woff') format('woff'),
+  url('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.ttf') format('truetype'),
+  url('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.svg}') format('svg');
+}
+
+$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$icon-font-path: "../assets/fonts/bootstrap/" !default;
 $navbar-height: 70px !default;
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
-@at-root {
-  // Import the fonts
-  @font-face {
-    font-family: 'Icomoon Icon';
-    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot'));
-    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot?#iefix'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.eot?#iefix')) format('embedded-opentype'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.woff'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.woff')) format('woff'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.ttf'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.ttf')) format('truetype'),
-    url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.svg##{$icon-font-svg-id}'), '#{$icomoon-icon-font-path}#{$icomoon-icon-font-name}.svg##{$icon-font-svg-id}')) format('svg');
-  }
-}
 
 .icomoon-icon {
   font-family: "Icomoon Icon" !important;
@@ -69,6 +68,7 @@ $navbar-height: 70px !default;
 .container-fluid, .container {
   text-align: center;
 }
+
 p.comment, span.comment {
   width: 600px;
   color: #9a9a9a;
@@ -82,6 +82,7 @@ span.comment {
   width: auto;
   display: inline;
 }
+
 .navbar-brand {
   height: $navbar-height;
   padding-top: 20px;
@@ -790,15 +791,13 @@ nav.navbar-fixed-top {
   position: relative;
 }
 
-#page2 .fourth-container .central p.comment{
+#page2 .fourth-container .central p.comment {
   @include opacity(0);
 }
 
 #page2 .fourth-container h4 {
   margin: 0 auto 25px;
 }
-
-
 
 #page2 .fourth-container ul {
   list-style: none;
@@ -1107,8 +1106,6 @@ nav.navbar-fixed-top {
   color: #ffffff;
 }
 
-
-
 #page3 .third-container ul {
   list-style: none;
   margin: 0;
@@ -1180,62 +1177,322 @@ nav.navbar-fixed-top {
 }
 
 //page4
-#page4 .first-container h4{
+#page4 .first-container h4 {
   margin-bottom: 30px;
 }
-#page4 .first-container .comment{
+
+#page4 .first-container .comment {
   width: auto;
   color: #000;
   margin-bottom: 50px;
 }
-#page4 .first-container ul{
+
+#page4 .first-container ul {
   width: 1000px;
   list-style: none;
   margin: 20px auto 50px;
   padding: 0;
 }
-#page4 .first-container ul li{
+
+#page4 .first-container ul li {
   width: 19%;
-  padding:10px 1%;
+  padding: 10px 1%;
   display: inline-block;
   vertical-align: top;
 }
-#page4 .first-container ul .comment{
+
+#page4 .first-container ul .comment {
   width: auto;
   margin: 10px auto 0;
   color: #7f7f7f;
   font-size: 13px;
 }
 
-#page4 .second-container{
+#page4 .second-container {
   background: #f3f1dc;
+  position: relative;
 }
-#page4 .second-container ul{
+
+#page4 .second-container ul.bottom {
   list-style: none;
   padding: 0;
 }
 
-#page4 .second-container ul li{
+#page4 .second-container ul.bottom li {
+  margin: auto 30px;
   display: inline-block;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
-  height: 120px;
+  height: 60px;
   vertical-align: middle;
-  letter-spacing: -2px;
-  line-height: 120px;
-  font-family: 'Candal', sans-serif;
+  letter-spacing: -5px;
+  line-height: 60px;
+  font-family: 'Montserrat', sans-serif;
 }
-#page4 .second-container ul li span{
+
+#page4 .second-container ul.bottom li span {
   display: inline-block;
 }
 
-#page4 .second-container ul li .text{
-  height: 80px;
-  vertical-align: middle;
-}
-#page4 .second-container ul li .text p{
-  line-height:40px;
-  font-size: 0.8em;
-  margin: 0;
+#page4 .second-container ul.bottom li .number {
+  color: #cfcdb7;
+  margin-right: 5px;
 }
 
+#page4 .second-container ul.bottom li .text {
+  height: 60px;
+  vertical-align: middle;
+}
+
+#page4 .second-container ul.bottom li .text p {
+  line-height: 0.7em;
+  font-size: 0.7em;
+  margin: 0;
+  color: #8d8c81;
+}
+
+#page4 .second-container .flexslider {
+  background: transparent;
+  border: none;
+}
+
+#page4 .second-container .flexslider div.outer-wrapper {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#page4 .second-container .flexslider img {
+  width: auto;
+  margin: auto;
+}
+
+#page4 .second-container .flexslider .flex-caption {
+  position: absolute;
+  right: 0%;
+  top: 5%;
+  padding-bottom: 20px;
+  padding-left: 80px;
+  width: 150px;
+  text-align: left;
+  background: url(../assets/images/page4/arrow_top.png) no-repeat bottom left transparent;
+  font-size: 13px;
+  font-style: italic;
+  color: #9b998c;
+}
+
+#page4 .second-container .flex-prev {
+  display: none;
+}
+
+#page4 .second-container .flex-next {
+  position: absolute;
+  display: block;
+  left: 50%;
+  margin-left: -16px;
+  top: 40%;
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
+  background: url(../assets/images/page4/refresh.png) no-repeat center transparent;;
+}
+
+#page4 .third-container {
+  padding: 0;
+}
+
+#page4 .third-container .bottom {
+  position: relative;
+}
+
+#page4 .third-container .bottom img {
+  width: auto;
+}
+
+#page4 .third-container .bottom .mask {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  visibility: hidden;
+  @include transition(all 350ms ease-in-out);
+  @include opacity(0);
+}
+
+@include keyframes(up-down) {
+  0% {
+    @include transform(translate(0px, 0px));
+  }
+  100% {
+    @include transform(translate(0, -7px));
+  }
+}
+
+#page4 .third-container .bottom span.icon {
+  z-index: 1001;
+  position: absolute;
+  background: url(../assets/images/page4/icons.png) transparent no-repeat;
+  cursor: pointer;
+  @include transition(all 350ms ease-in-out);
+  width: 52px;
+  height: 57px;
+  &:hover {
+    @include animation(up-down 500ms ease-in-out 0s infinite alternate)
+  }
+;
+}
+
+#page4 .third-container .bottom span.icon.type1.first {
+  background-position: -100px -100px;
+  left: 394px;
+  top: 137px;
+  display: block;
+}
+
+#page4 .third-container .bottom span.icon.type2.first {
+  background-position: -500px -300px;
+  left: 520px;
+  top: 243px;
+  display: block;
+}
+
+#page4 .third-container .bottom div.content {
+  position: absolute;
+  opacity: 0;
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 300px;
+  height: 300px;
+  padding: 12px;
+  @include transition(all 350ms ease-in-out);
+  @include opacity(0);
+  border: 10px solid #000;
+  border-radius: 50%;
+  background: #fff;
+}
+
+#page4 .third-container .bottom div.type1 {
+  border-width: 5px;
+  border-color: rgb(178, 66, 147);
+  left: 150px;
+  top: 297px;
+  width: 300px;
+  height: 300px;
+  display: block;
+}
+
+#page4 .third-container .bottom div.type2 {
+  border-width: 5px;
+  border-color: rgb(0, 187, 240);
+  left: 150px;
+  top: 297px;
+  width: 330px;
+  height: 330px;
+  display: block;
+}
+
+#page4 .third-container .bottom .content .logo {
+  display: block;
+  width: 74px;
+  height: 43px;
+  margin: 0 auto;
+  background: url(../assets/images/page4/icons.png) transparent no-repeat;
+}
+
+#page4 .third-container .bottom .content.type1 .logo {
+  background-position: 0 -100px;
+}
+
+#page4 .third-container .bottom .content.type2 .logo {
+  width: 77px;
+  height: 80px;
+  background-position: 0 -300px;
+}
+
+#page4 .third-container .bottom .content .title {
+  font-size: 18px;
+  margin-top: 12px;
+  color: #2b2b2b;
+  font-weight: bold;
+}
+
+#page4 .third-container .bottom .content .description {
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 12px;
+  color: #2b2b2b;
+}
+
+#page4 .third-container .bottom .content.type1 .description.color {
+  color: rgb(178, 66, 147);
+}
+
+#page4 .third-container .bottom .content.type2 .description.color {
+  color: rgb(0, 187, 240);
+}
+
+#page4 .fourth-container {
+  position: relative;
+  color: #fff;
+  background-color: #191919;
+}
+#page4 .fourth-container h4{
+  color: #fff;
+}
+#page4 .fourth-container ul{
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+#page4 .fourth-container li{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 60px;
+  text-align: left;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#page4 .fourth-container li .number {
+  font-size: 34px;
+  line-height: 30px;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 0;
+}
+#page4 .fourth-container li .number:nth-child(1){
+  color: #24bbeb;
+}
+#page4 .fourth-container li .number:nth-child(2){
+  color: #af4892;
+}
+#page4 .fourth-container li .number:nth-child(3){
+  color: #f0e031;
+}
+#page4 .fourth-container li .number:nth-child(4){
+  color: #9ac245;
+}
+#page4 .fourth-container li .number:nth-child(5){
+  color: #cc2e39;
+}
+#page4 .fourth-container li .number:nth-child(6){
+  color: #f29848;
+}
+#page4 .fourth-container li .number:nth-child(7){
+  color: #b09383;
+}
+
+
+#page4 .fourth-container li .text {
+  font-size: 22px;
+  line-height: 17px;
+  color: #fff;
+  margin-bottom: 20px;
+}
