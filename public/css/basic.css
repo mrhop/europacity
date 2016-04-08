@@ -9720,7 +9720,7 @@ nav.navbar-fixed-top {
 }
 
 /* line 716, ../../scss/basic.scss */
-#page2 .third-container {
+div.someone_say {
   position: relative;
   overflow: hidden;
   background-color: #eade1c;
@@ -9728,7 +9728,7 @@ nav.navbar-fixed-top {
 }
 
 /* line 723, ../../scss/basic.scss */
-#page2 .third-container .trigger_photo {
+div.someone_say .trigger_photo {
   visibility: hidden;
   position: absolute;
   top: 0px;
@@ -9736,7 +9736,7 @@ nav.navbar-fixed-top {
 }
 
 /* line 730, ../../scss/basic.scss */
-#page2 .third-container div.arrow {
+div.someone_say div.arrow {
   position: absolute;
   top: -197px;
   left: 50%;
@@ -9747,7 +9747,7 @@ nav.navbar-fixed-top {
 }
 
 /* line 740, ../../scss/basic.scss */
-#page2 .third-container div.img {
+div.someone_say div.img {
   position: absolute;
   top: 400px;
   left: 50%;
@@ -9757,7 +9757,7 @@ nav.navbar-fixed-top {
 }
 
 /* line 749, ../../scss/basic.scss */
-#page2 .third-container .top {
+div.someone_say .top {
   font-size: 72px;
   font-style: italic;
   line-height: 70px;
@@ -9770,13 +9770,13 @@ nav.navbar-fixed-top {
 }
 
 /* line 761, ../../scss/basic.scss */
-#page2 .third-container .bottom {
+div.someone_say .bottom {
   text-align: center;
   opacity: 0;
 }
 
 /* line 766, ../../scss/basic.scss */
-#page2 .third-container .bottom p.first {
+div.someone_say .bottom p.first {
   font-size: 16px;
   font-style: italic;
   line-height: 26px;
@@ -9787,12 +9787,12 @@ nav.navbar-fixed-top {
 }
 
 /* line 776, ../../scss/basic.scss */
-#page2 .third-container .bottom p.second {
+div.someone_say .bottom p.second {
   font-weight: bold;
 }
 
 /* line 780, ../../scss/basic.scss */
-#page2 .third-container .bottom p.second, #page2 .third-container .bottom p.third {
+div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   font-size: 14px;
   font-style: italic;
   line-height: 26px;
@@ -10599,18 +10599,18 @@ nav.navbar-fixed-top {
   background-color: #191919;
 }
 
-/* line 1446, ../../scss/basic.scss */
+/* line 1447, ../../scss/basic.scss */
 #page4 .fourth-container h4 {
   color: #fff;
 }
 
-/* line 1449, ../../scss/basic.scss */
+/* line 1451, ../../scss/basic.scss */
 #page4 .fourth-container ul {
   list-style: none;
   margin-bottom: 80px;
 }
 
-/* line 1454, ../../scss/basic.scss */
+/* line 1456, ../../scss/basic.scss */
 #page4 .fourth-container li {
   display: inline-block;
   vertical-align: middle;
@@ -10620,53 +10620,250 @@ nav.navbar-fixed-top {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* line 1463, ../../scss/basic.scss */
+/* line 1465, ../../scss/basic.scss */
 #page4 .fourth-container li .number {
   font-size: 34px;
   line-height: 30px;
+  letter-spacing: -1px;
   color: #fff;
   margin-bottom: 0;
 }
 
-/* line 1469, ../../scss/basic.scss */
+/* line 1473, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(1) {
   color: #24bbeb;
 }
 
-/* line 1472, ../../scss/basic.scss */
+/* line 1477, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(2) {
   color: #af4892;
 }
 
-/* line 1475, ../../scss/basic.scss */
+/* line 1481, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(3) {
   color: #f0e031;
 }
 
-/* line 1478, ../../scss/basic.scss */
+/* line 1485, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(4) {
   color: #9ac245;
 }
 
-/* line 1481, ../../scss/basic.scss */
+/* line 1489, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(5) {
   color: #cc2e39;
 }
 
-/* line 1484, ../../scss/basic.scss */
+/* line 1493, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(6) {
   color: #f29848;
 }
 
-/* line 1487, ../../scss/basic.scss */
+/* line 1497, ../../scss/basic.scss */
 #page4 .fourth-container li .number:nth-child(7) {
   color: #b09383;
 }
 
-/* line 1492, ../../scss/basic.scss */
+/* line 1501, ../../scss/basic.scss */
 #page4 .fourth-container li .text {
   font-size: 22px;
   line-height: 17px;
   color: #fff;
   margin-bottom: 20px;
+}
+
+/* line 1509, ../../scss/basic.scss */
+#page4 .fifth-container {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+/* line 1514, ../../scss/basic.scss */
+#page4 .fifth-container h4 {
+  margin-bottom: 5px;
+}
+
+/* line 1518, ../../scss/basic.scss */
+#page4 .fifth-container p.comment {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin-bottom: 15px;
+}
+
+/* line 1523, ../../scss/basic.scss */
+#page4 .fifth-container img {
+  display: block;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin: 0 auto 30px;
+}
+
+/* line 1529, ../../scss/basic.scss */
+#page4 .fifth-container p:not(.comment) {
+  color: #000000;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* line 1539, ../../scss/basic.scss */
+#page4 .fifth-container div.top {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 1543, ../../scss/basic.scss */
+#page4 .fifth-container div.top img, #page4 .fifth-container div.bottom img {
+  margin-bottom: 15px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 1548, ../../scss/basic.scss */
+#page4 .fifth-container div.bottom {
+  margin-top: -100px;
+  width: 100%;
+}
+
+/* line 1553, ../../scss/basic.scss */
+#page4 .fifth-container div.bottom div.pull-left {
+  margin-left: 170px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 1559, ../../scss/basic.scss */
+#page4 .fifth-container div.bottom div.pull-right {
+  margin-right: 170px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 1564, ../../scss/basic.scss */
+#page4 .fifth-container div.bottom .pull-right img {
+  margin-top: 37px;
+}
+
+/* line 1568, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_1, #page4 .fifth-container .trigger_2, #page4 .fifth-container .trigger_3, #page4 .fifth-container .trigger_4, #page4 .fifth-container .trigger_5, #page4 .fifth-container .trigger_6 {
+  position: absolute;
+  left: -10000px;
+  height: 200px;
+}
+
+/* line 1574, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_1 {
+  top: -100px;
+}
+
+/* line 1578, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_2 {
+  top: -50px;
+}
+
+/* line 1582, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_3 {
+  top: 0px;
+}
+
+/* line 1586, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_4 {
+  top: 50px;
+}
+
+/* line 1590, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_5 {
+  top: 100px;
+}
+
+/* line 1594, ../../scss/basic.scss */
+#page4 .fifth-container .trigger_6 {
+  top: 100px;
+}
+
+/* line 1598, ../../scss/basic.scss */
+#page4 .sixth-container {
+  background: #96c23b;
+}
+
+/* line 1603, ../../scss/basic.scss */
+#page5 .first-container {
+  padding-bottom: 80px;
+}
+
+/* line 1606, ../../scss/basic.scss */
+#page5 .first-container .central {
+  position: relative;
+  height: 565px;
+  background: url(../assets/images/page5/bg.png) transparent center center no-repeat;
+}
+
+/* line 1612, ../../scss/basic.scss */
+#page5 .first-container .central .center {
+  position: relative;
+  line-height: 565px;
+  display: inline-block;
+  z-index: 1000;
+}
+
+/* line 1619, ../../scss/basic.scss */
+#page5 .first-container .central span.text {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* line 1631, ../../scss/basic.scss */
+#page5 .first-container .central .left-top {
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  line-height: 230px;
+  z-index: 999;
+}
+
+/* line 1639, ../../scss/basic.scss */
+#page5 .first-container .central .right-top {
+  position: absolute;
+  top: 108px;
+  right: 166px;
+  line-height: 255px;
+  z-index: 999;
+}
+
+/* line 1647, ../../scss/basic.scss */
+#page5 .first-container .central .left-bottom {
+  position: absolute;
+  top: 300px;
+  left: 250px;
+  line-height: 198px;
+  z-index: 999;
+}
+
+/* line 1655, ../../scss/basic.scss */
+#page5 .first-container .central .right-bottom {
+  position: absolute;
+  top: 300px;
+  right: 250px;
+  line-height: 205px;
+  z-index: 999;
+}
+
+/* line 1663, ../../scss/basic.scss */
+#page5 .first-container .central .left-top span.text, #page5 .first-container .central .right-top span.text {
+  font-size: 26px;
+}
+
+/* line 1667, ../../scss/basic.scss */
+#page5 .first-container .central .left-bottom span.text, #page5 .first-container .central .right-bottom span.text {
+  font-size: 22px;
 }

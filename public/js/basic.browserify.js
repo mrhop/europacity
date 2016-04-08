@@ -23250,19 +23250,19 @@ $(document).ready(function () {
             }
         });
 
-        //thiid section
+        //third section
         var controller = new ScrollMagic.Controller();
-        new ScrollMagic.Scene({triggerElement: ".third-container .trigger_photo", duration: 300})
-            .setTween(".third-container .arrow", {top: "0"})
+        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+            .setTween(".someone_say .arrow", {top: "0"})
             .addTo(controller);
-        new ScrollMagic.Scene({triggerElement: ".third-container .trigger_photo", duration: 300})
-            .setTween(".third-container .img", {top: "100px"})
+        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+            .setTween(".someone_say .img", {top: "100px"})
             .addTo(controller);
-        new ScrollMagic.Scene({triggerElement: ".third-container .top", duration: 500})
-            .setTween(".third-container .top", {opacity: 1})
+        new ScrollMagic.Scene({triggerElement: ".someone_say .top", duration: 500})
+            .setTween(".someone_say .top", {opacity: 1})
             .addTo(controller);
-        new ScrollMagic.Scene({triggerElement: ".third-container .top p:nth-child(1)", duration: 200})
-            .setTween(".third-container .bottom", {opacity: 1})
+        new ScrollMagic.Scene({triggerElement: ".someone_say .top p:nth-child(1)", duration: 200})
+            .setTween(".someone_say .bottom", {opacity: 1})
             .addTo(controller);
 
         new ScrollMagic.Scene({triggerElement: ".fourth-container div.trigger_p", duration: 100})
@@ -23379,6 +23379,55 @@ $(document).ready(function () {
             $("#page4 .third-container .bottom  div.content").css("visibility", "hidden").css("opacity", 0);
             $(this).css("visibility", "hidden").css("opacity", 0);
         })
+
+        var controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_1", duration: 200})
+            .setTween(".fifth-container .comment", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_2", duration: 200})
+            .setTween(".fifth-container img.top1", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_3", duration: 200})
+            .setTween(".fifth-container img.top2", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_4", duration: 200})
+            .setTween(".fifth-container .top", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_5", duration: 400})
+            .setTween(".fifth-container .bottom .pull-left", {opacity: 1,marginLeft:"270px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_6", duration: 400})
+            .setTween(".fifth-container .bottom .pull-right", {opacity: 1,marginRight:"300px"})
+            .addTo(controller);
+
+        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+            .setTween(".someone_say .arrow", {top: "0"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+            .setTween(".someone_say .img", {top: "100px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".someone_say .top", duration: 500})
+            .setTween(".someone_say .top", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".someone_say .top p:nth-child(1)", duration: 200})
+            .setTween(".someone_say .bottom", {opacity: 1})
+            .addTo(controller);
+    }else if ($("#page5").size() > 0) {
+        var controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
+            .setTween(".first-container .left-top", {left: "150px",top:"20px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
+            .setTween(".first-container .right-top", {right: "100px",top:"60px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
+            .setTween(".first-container .left-bottom", {left: "180px",top:"350px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
+            .setTween(".first-container .right-bottom", {right: "180px",top:"350px"})
+            .addTo(controller);
     }
 });
 

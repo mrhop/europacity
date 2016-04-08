@@ -713,21 +713,21 @@ nav.navbar-fixed-top {
   @include opacity(1);
 }
 
-#page2 .third-container {
+div.someone_say {
   position: relative;
   overflow: hidden;
   background-color: #eade1c;
   padding: 100px 0;
 }
 
-#page2 .third-container .trigger_photo {
+div.someone_say .trigger_photo {
   visibility: hidden;
   position: absolute;
   top: 0px;
   height: 400px;
 }
 
-#page2 .third-container div.arrow {
+div.someone_say div.arrow {
   position: absolute;
   top: -197px;
   left: 50%;
@@ -737,7 +737,7 @@ nav.navbar-fixed-top {
   background: url(../assets/images/page2/thrid/arrow_down_white_big.png) no-repeat center center;
 }
 
-#page2 .third-container div.img {
+div.someone_say div.img {
   position: absolute;
   top: 400px;
   left: 50%;
@@ -746,7 +746,7 @@ nav.navbar-fixed-top {
   margin: 0 0 0 -113px;
 }
 
-#page2 .third-container .top {
+div.someone_say .top {
   font-size: 72px;
   font-style: italic;
   line-height: 70px;
@@ -758,12 +758,12 @@ nav.navbar-fixed-top {
   opacity: 0;
 }
 
-#page2 .third-container .bottom {
+div.someone_say .bottom {
   text-align: center;
   opacity: 0;
 }
 
-#page2 .third-container .bottom p.first {
+div.someone_say .bottom p.first {
   font-size: 16px;
   font-style: italic;
   line-height: 26px;
@@ -773,11 +773,11 @@ nav.navbar-fixed-top {
   background: url(../assets/images/page2/thrid/segment_black.png) bottom center no-repeat;
 }
 
-#page2 .third-container .bottom p.second {
+div.someone_say .bottom p.second {
   font-weight: bold;
 }
 
-#page2 .third-container .bottom p.second, #page2 .third-container .bottom p.third {
+div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   font-size: 14px;
   font-style: italic;
   line-height: 26px;
@@ -1443,15 +1443,17 @@ nav.navbar-fixed-top {
   color: #fff;
   background-color: #191919;
 }
-#page4 .fourth-container h4{
+
+#page4 .fourth-container h4 {
   color: #fff;
 }
-#page4 .fourth-container ul{
+
+#page4 .fourth-container ul {
   list-style: none;
   margin-bottom: 80px;
 }
 
-#page4 .fourth-container li{
+#page4 .fourth-container li {
   display: inline-block;
   vertical-align: middle;
   margin: 0 60px;
@@ -1467,28 +1469,34 @@ nav.navbar-fixed-top {
   color: #fff;
   margin-bottom: 0;
 }
-#page4 .fourth-container li .number:nth-child(1){
+
+#page4 .fourth-container li .number:nth-child(1) {
   color: #24bbeb;
 }
-#page4 .fourth-container li .number:nth-child(2){
+
+#page4 .fourth-container li .number:nth-child(2) {
   color: #af4892;
 }
-#page4 .fourth-container li .number:nth-child(3){
+
+#page4 .fourth-container li .number:nth-child(3) {
   color: #f0e031;
 }
-#page4 .fourth-container li .number:nth-child(4){
+
+#page4 .fourth-container li .number:nth-child(4) {
   color: #9ac245;
 }
-#page4 .fourth-container li .number:nth-child(5){
+
+#page4 .fourth-container li .number:nth-child(5) {
   color: #cc2e39;
 }
-#page4 .fourth-container li .number:nth-child(6){
+
+#page4 .fourth-container li .number:nth-child(6) {
   color: #f29848;
 }
-#page4 .fourth-container li .number:nth-child(7){
+
+#page4 .fourth-container li .number:nth-child(7) {
   color: #b09383;
 }
-
 
 #page4 .fourth-container li .text {
   font-size: 22px;
@@ -1496,3 +1504,168 @@ nav.navbar-fixed-top {
   color: #fff;
   margin-bottom: 20px;
 }
+
+//fifth block
+#page4 .fifth-container {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+#page4 .fifth-container h4 {
+  margin-bottom: 5px;
+}
+
+#page4 .fifth-container p.comment {
+  @include opacity(0);
+  margin-bottom: 15px;
+}
+
+#page4 .fifth-container img {
+  display: block;
+  @include opacity(0);
+  margin: 0 auto 30px;
+}
+
+#page4 .fifth-container p:not(.comment) {
+  color: #000000;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#page4 .fifth-container div.top {
+  @include opacity(0);
+}
+
+#page4 .fifth-container div.top img, #page4 .fifth-container div.bottom img {
+  margin-bottom: 15px;
+  @include opacity(1);
+}
+
+#page4 .fifth-container div.bottom {
+  margin-top: -100px;
+  width: 100%;
+}
+
+#page4 .fifth-container div.bottom div.pull-left {
+  margin-left: 170px;
+  @include opacity(0);
+
+}
+
+#page4 .fifth-container div.bottom div.pull-right {
+  margin-right: 170px;
+  @include opacity(0);
+}
+
+#page4 .fifth-container div.bottom .pull-right img {
+  margin-top: 37px;
+}
+
+#page4 .fifth-container .trigger_1, #page4 .fifth-container .trigger_2, #page4 .fifth-container .trigger_3, #page4 .fifth-container .trigger_4, #page4 .fifth-container .trigger_5, #page4 .fifth-container .trigger_6 {
+  position: absolute;
+  left: -10000px;
+  height: 200px;
+}
+
+#page4 .fifth-container .trigger_1 {
+  top: -100px;
+}
+
+#page4 .fifth-container .trigger_2 {
+  top: -50px;
+}
+
+#page4 .fifth-container .trigger_3 {
+  top: 0px;
+}
+
+#page4 .fifth-container .trigger_4 {
+  top: 50px;
+}
+
+#page4 .fifth-container .trigger_5 {
+  top: 100px;
+}
+
+#page4 .fifth-container .trigger_6 {
+  top: 100px;
+}
+
+#page4 .sixth-container {
+  background: #96c23b;
+}
+
+//page5
+#page5 .first-container {
+  padding-bottom: 80px;
+}
+#page5 .first-container .central {
+  position: relative;
+  height: 565px;
+  background: url(../assets/images/page5/bg.png) transparent center center no-repeat;
+}
+
+#page5 .first-container .central .center {
+  position: relative;
+  line-height: 565px;
+  display: inline-block;
+  z-index: 1000;
+}
+
+#page5 .first-container .central span.text {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#page5 .first-container .central .left-top {
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  line-height: 230px;
+  z-index: 999;
+}
+
+#page5 .first-container .central .right-top {
+  position: absolute;
+  top: 108px;
+  right: 166px;
+  line-height: 255px;
+  z-index: 999;
+}
+
+#page5 .first-container .central .left-bottom {
+  position: absolute;
+  top: 300px;
+  left: 250px;
+  line-height: 198px;
+  z-index: 999;
+}
+
+#page5 .first-container .central .right-bottom {
+  position: absolute;
+  top: 300px;
+  right: 250px;
+  line-height: 205px;
+  z-index: 999;
+}
+
+#page5 .first-container .central .left-top span.text, #page5 .first-container .central .right-top span.text {
+  font-size: 26px;
+}
+
+#page5 .first-container .central .left-bottom span.text, #page5 .first-container .central .right-bottom span.text {
+  font-size: 22px;
+}
+
+
