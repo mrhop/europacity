@@ -116,8 +116,14 @@ nav.navbar-fixed-top {
   margin-top: $navbar-height;
 }
 
+html.home, body#home {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .index-container {
-  height: 700px;
+  height: 100%;
   position: relative;
   margin-left: 0;
   margin-right: 0;
@@ -139,6 +145,32 @@ nav.navbar-fixed-top {
 .index-container ul.home_slider li {
   overflow: hidden;
   height: 100%;
+  @include background-size(cover);
+}
+
+.index-container ul.home_slider li {
+  overflow: hidden;
+  height: 100%;
+}
+
+.index-container ul.home_slider li:first-child {
+  background: url(../assets/images/home_slider/1.jpg) no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+.index-container ul.home_slider li:nth-child(2) {
+  background: url(../assets/images/home_slider/2.jpg) no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+.index-container ul.home_slider li:nth-child(3) {
+  background: url(../assets/images/home_slider/3.jpg) no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+.index-container ul.home_slider li:nth-child(4) {
+  background: url(../assets/images/home_slider/1.jpg) no-repeat center center fixed;
+  @include background-size(cover);
 }
 
 .index-container .flexslider {
@@ -189,6 +221,7 @@ nav.navbar-fixed-top {
 
 .index-container .flexslider .item > img {
   @include transition(all 1s ease);
+  height: 100%;
 }
 
 .index-container .flexslider .item:hover > img {
@@ -696,7 +729,7 @@ nav.navbar-fixed-top {
   margin: 0 auto;
 }
 
-#page2 .second-container span.glyphicon-play-circle, #page2 .fifth-container span.glyphicon-play-circle {
+#page2 .second-container span.glyphicon-play-circle, #page2 .fifth-container span.glyphicon-play-circle, #page5 .fifth-container span.glyphicon-play-circle {
   display: block;
   position: absolute;
   font-size: 80px;
@@ -707,9 +740,10 @@ nav.navbar-fixed-top {
   @include opacity(0);
   color: #ffffff;
   cursor: pointer;
+  @include transition(all 0.5s ease);
 }
 
-#page2 .second-container div.video:hover span.glyphicon-play-circle {
+#page2 .second-container div.video:hover span.glyphicon-play-circle, #page2 .fifth-container:hover span.glyphicon-play-circle, #page5 .fifth-container li.item.flex-active-slide:hover span {
   @include opacity(1);
 }
 
@@ -855,10 +889,6 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   width: 21px;
   left: 50%;
   margin-left: -11px;
-}
-
-#page2 .fifth-container:hover span.glyphicon-play-circle {
-  @include opacity(1);
 }
 
 #page2 .sixth-container .top {
@@ -1603,6 +1633,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
 #page5 .first-container {
   padding-bottom: 80px;
 }
+
 #page5 .first-container .central {
   position: relative;
   height: 565px;
@@ -1668,4 +1699,423 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   font-size: 22px;
 }
 
+#page5 .second-container {
+  margin: 0;
+  padding: 0;
+  height: 1000px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
 
+#page5 .second-container img.main-img {
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  @include opacity(0);
+  width: 100%;
+  z-index: 1;
+  @include transition(all 1s ease);
+}
+
+#page5 .second-container img.main-img.selected {
+  @include opacity(1);
+}
+
+#page5 .second-container div.direct {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 465px;
+  height: 1000px;
+  padding: 225px 0 0;
+  background: #206f85;
+  @include transition(all 1.5s ease);
+}
+
+#page5 .second-container div.direct.closed {
+  left: -390px;
+}
+
+#page5 .second-container div.direct span.glyphicon {
+  @include transition(all 1.5s ease);
+  cursor: pointer;
+  position: absolute;
+  right: 23px;
+  overflow: hidden;
+  font-size: 35px;
+  color: white;
+}
+
+#page5 .second-container div.direct span.glyphicon-remove {
+  top: 35px;
+  overflow: hidden;
+  font-size: 35px;
+  font-weight: 100;
+  color: white;
+}
+
+#page5 .second-container div.direct.closed span.glyphicon-remove {
+  top: 50%;
+  margin-top: -17px;
+  @include opacity(0);
+}
+
+#page5 .second-container div.direct span.glyphicon-chevron-right {
+  top: 35px;
+  @include opacity(0);
+  display: none;
+}
+
+#page5 .second-container div.direct.closed span.glyphicon-chevron-right {
+  top: 50%;
+  margin-top: -17px;
+  @include opacity(1);
+}
+
+#page5 .second-container div.direct h4 {
+  margin-top: 20px;
+  color: white;
+}
+
+#page5 .second-container div.direct .separator {
+  margin: auto;
+  display: block;
+  width: 10%;
+  height: 1px;
+  background-color: #72aabb;
+}
+
+#page5 .second-container div.direct div.base {
+  position: relative;
+  margin-top: 100px;
+}
+
+#page5 .second-container div.direct div.base span.plus {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  cursor: pointer;
+  background: url(../assets/images/page5/project-plus.png) no-repeat center center transparent;
+}
+
+#page5 .second-container div.direct div.base span.plus.selected {
+  background: url(../assets/images/page5/project-plus-selected.png) no-repeat center center transparent;
+}
+
+#page5 .second-container div.direct div.base span.plus1 {
+  left: 190px;
+  top: 60px;
+}
+
+#page5 .second-container div.direct div.base span.plus2 {
+  left: 230px;
+  top: 105px;
+}
+
+#page5 .third-container {
+  background-color: #dce5e8;
+}
+
+#page5 .third-container div.arrow {
+  background: url(../assets/images/page5/arrow.png) no-repeat center center;
+}
+
+#page5 div.third-container .top, #page5 div.third-container .bottom p.first, #page5 div.third-container .bottom p.second, #page5 div.third-container .bottom p.third {
+  color: #2a697a;
+}
+
+#page5 .fourth-container {
+  padding: 0;
+  margin: 0;
+}
+
+#page5 .fourth-container .flexslider {
+  border: none;
+  position: relative;
+  height: 720px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+#page5 .fourth-container .flexslider .control-div {
+  @include transition(all 1s ease);
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -25px;
+  z-index: 2;
+}
+
+#page5 .fourth-container .flexslider .control-nav {
+  list-style: none;
+  width: 50%;
+  margin: auto;
+  padding: 0;
+  @include transition(all 0.5s ease);
+  @include opacity(0);
+}
+
+#page5 .fourth-container .flexslider:hover .control-nav {
+  @include opacity(1)
+}
+
+#page5 .fourth-container .flexslider .control-nav li {
+  display: block;
+  margin: auto auto 1px auto;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 50px;
+  @include opacity(0);
+  @include transition(all 0.5s ease);
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+#page5 .fourth-container .flexslider .control-nav:hover li {
+  @include opacity(1);
+}
+
+#page5 .fourth-container .flexslider .control-nav li:hover, #page5 .fourth-container .flexslider .control-nav li.flex-active {
+  @include opacity(1);
+  background-color: rgba(33, 33, 33, 0.4);
+}
+
+#page5 .fifth-container {
+  background-color: rgb(11, 38, 46);
+  color: rgb(179, 185, 190);
+  padding: 0;
+  overflow: hidden;
+}
+
+#page5 .fifth-container h4 {
+  color: rgb(179, 185, 190);
+  margin-bottom: 0px;
+}
+
+#page5 .fifth-container h5 {
+  margin-bottom: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#page5 .fifth-container .flexslider {
+  border: none;
+  position: relative;
+  overflow: visible;
+  background: transparent;
+  width: 614px;
+  margin: auto auto 40px auto;
+}
+
+#page5 .fifth-container .flexslider .flex-viewport {
+  overflow: visible !important;
+  height: 353px !important;
+}
+
+#page5 .fifth-container .flexslider li {
+  line-height: 352px;
+  vertical-align: middle;
+  @include transition(all 0.5s ease);
+  position: relative;
+}
+
+#page5 .fifth-container .flexslider li:not(.flex-active-slide) {
+  @include filter(blur(2px));
+}
+
+#page5 .fifth-container .flexslider li img {
+  width: 614px;
+  margin: auto;
+  display: inline-block;
+  @include transition(all 0.5s ease);
+}
+
+#page5 .fifth-container .flexslider li:not(.flex-active-slide) img {
+  width: 491px;
+  cursor: pointer;
+}
+
+#page5 .fifth-container .control-nav {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+#page5 .fifth-container .control-nav li {
+  @include opacity(0.3);
+  display: inline-block;
+  font-size: 18px;
+  letter-spacing: -1px;
+  line-height: 30px;
+  font-weight: bold;
+  vertical-align: middle;
+  width: 15%;
+  cursor: pointer;
+}
+
+#page5 .fifth-container .control-nav li.flex-active {
+  @include opacity(1);
+}
+
+//page6
+#page6 .first-container {
+  background: url(../assets/images/page6/time-line-bg.png) repeat;
+  color: #fff;
+  overflow: hidden;
+  padding: 0;
+}
+
+#page6 .first-container h4 {
+  color: #fff;
+}
+
+#page6 .first-container .flexslider {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#page6 .first-container .flexslider .flex-viewport {
+  overflow: visible !important;
+}
+
+#page6 .first-container .flexslider li.item {
+  position: relative;
+  overflow: visible;
+}
+
+#page6 .first-container .flexslider li.item .shadow {
+  z-index: -1;
+  position: absolute;
+  top: 57px;
+  left: 50%;
+  margin-left: -332px;
+  width: 506px;
+  height: 517px;
+  background: url(../assets/images/page6/timeline-shadow.png) no-repeat scroll center center transparent;
+}
+
+#page6 .first-container .flexslider li.item img {
+  width: auto;
+  margin: auto;
+}
+
+#page6 .first-container .flexslider li.item h5 {
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 130px;
+}
+
+#page6 .first-container .control-div {
+  background: #1a262c;
+  margin: auto 20% 50px 20%;
+  height: 18px;
+  position: relative;
+}
+
+#page6 .first-container .control-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+#page6 .first-container .control-nav li {
+  float: left;
+  color: #8ea4b1;
+  width: 25%;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+#page6 .first-container .control-nav li.flex-active {
+  color: #fff;
+}
+
+#page6 .first-container .control-nav li p {
+  line-height: 60px;
+  cursor: pointer;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -60px;
+  margin-bottom: 0;
+}
+
+#page6 .first-container .control-div div.circle {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#page6 .first-container .control-nav div.circle {
+  background: url(../assets/images/page6/timeline-circle.png) center no-repeat transparent;
+
+}
+
+#page6 .first-container .control-div div.circle.direct {
+  background: orange;
+  border-radius: 18px;
+  position: absolute;
+  left: 12.5%;
+  margin-left: -9px;
+  z-index: 0;
+  @include transition(all 1s ease);
+}
+
+#page6 .first-container .control-nav li .cover {
+  position: absolute;
+  border: 8px solid transparent;
+  border-left: 0;
+  border-right: 0;
+  border-image: url(../assets/images/page6/time-line-bg.png) 8 8 round;
+  height: 18px;
+  top: 0
+}
+
+#page6 .first-container .control-nav li .cover.left {
+  left: 0;
+  right: 50%;
+  margin-right: 9px;
+  border-right: 8px;
+}
+
+#page6 .first-container .control-nav li .cover.right {
+  right: 0;
+  left: 50%;
+  margin-left: 9px;
+  border-left: 8px;
+}
+
+#page6 .first-container .control-nav li .begin, #page6 .first-container .control-nav li .end {
+  background: url(../assets/images/page6/time-line-bg.png) repeat;
+  position: absolute;
+  height: 18px;
+  top: 0;
+}
+
+#page6 .first-container .control-nav li .begin {
+  left: 0;
+  right: 50%;
+  margin-right: 9px;
+}
+
+#page6 .first-container .control-nav li .end {
+  right: 0;
+  left: 50%;
+  margin-left: 9px;
+}

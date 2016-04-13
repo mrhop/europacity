@@ -23367,7 +23367,8 @@ $(document).ready(function () {
             customDirectionNav: $(".custom-navigation a")
         });
         $('#page4 .third-container .bottom .icon').click(function () {
-            $("#page4 .third-container .bottom .mask").css("visibility", "visible").css("opacity", 1);;
+            $("#page4 .third-container .bottom .mask").css("visibility", "visible").css("opacity", 1);
+            ;
             $("#page4 .third-container .bottom .icon").css("visibility", "hidden").css("opacity", 0);
             $("#page4 .third-container .bottom .icon" + "." + $(this).data("type")).css("visibility", "visible").css("opacity", 1);
             $("#page4 .third-container .bottom  div.content").css("visibility", "hidden").css("opacity", 0);
@@ -23395,10 +23396,10 @@ $(document).ready(function () {
             .setTween(".fifth-container .top", {opacity: 1})
             .addTo(controller);
         new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_5", duration: 400})
-            .setTween(".fifth-container .bottom .pull-left", {opacity: 1,marginLeft:"270px"})
+            .setTween(".fifth-container .bottom .pull-left", {opacity: 1, marginLeft: "270px"})
             .addTo(controller);
         new ScrollMagic.Scene({triggerElement: ".fifth-container div.trigger_6", duration: 400})
-            .setTween(".fifth-container .bottom .pull-right", {opacity: 1,marginRight:"300px"})
+            .setTween(".fifth-container .bottom .pull-right", {opacity: 1, marginRight: "300px"})
             .addTo(controller);
 
         new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
@@ -23413,21 +23414,105 @@ $(document).ready(function () {
         new ScrollMagic.Scene({triggerElement: ".someone_say .top p:nth-child(1)", duration: 200})
             .setTween(".someone_say .bottom", {opacity: 1})
             .addTo(controller);
-    }else if ($("#page5").size() > 0) {
+    } else if ($("#page5").size() > 0) {
         var controller = new ScrollMagic.Controller();
 
         new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
-            .setTween(".first-container .left-top", {left: "150px",top:"20px"})
+            .setTween(".first-container .left-top", {left: "150px", top: "20px"})
             .addTo(controller);
         new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
-            .setTween(".first-container .right-top", {right: "100px",top:"60px"})
+            .setTween(".first-container .right-top", {right: "100px", top: "60px"})
             .addTo(controller);
         new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
-            .setTween(".first-container .left-bottom", {left: "180px",top:"350px"})
+            .setTween(".first-container .left-bottom", {left: "180px", top: "350px"})
             .addTo(controller);
         new ScrollMagic.Scene({triggerElement: ".first-container div.center img", duration: 200})
-            .setTween(".first-container .right-bottom", {right: "180px",top:"350px"})
+            .setTween(".first-container .right-bottom", {right: "180px", top: "350px"})
             .addTo(controller);
+        $(".second-container .direct .plus").click(function () {
+            $(".second-container .direct .plus.selected").removeClass("selected");
+            $(this).addClass("selected");
+            $(".second-container .main-img.selected").removeClass("selected");
+            $(".second-container .main-img" + "." + $(this).data("related")).addClass("selected");
+        });
+        $(".second-container .direct .glyphicon-remove").click(function () {
+            $(".second-container .direct").addClass("closed");
+        });
+        $(".second-container .direct .glyphicon-chevron-right").click(function () {
+            $(".second-container .direct").removeClass("closed");
+        });
+        $(".second-container .direct").bind($.support.transition.end,
+            function () {
+                if ($(".second-container .direct").hasClass("closed")) {
+                    $(".second-container .direct .glyphicon-remove").hide();
+                    $(".second-container .direct .glyphicon-chevron-right").show();
+                } else {
+                    $(".second-container .direct .glyphicon-remove").show();
+                    $(".second-container .direct .glyphicon-chevron-right").hide();
+                }
+            });
+        var controller = new ScrollMagic.Controller();
+        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+            .setTween(".someone_say .arrow", {top: "0"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+            .setTween(".someone_say .img", {top: "100px"})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".someone_say .top", duration: 500})
+            .setTween(".someone_say .top", {opacity: 1})
+            .addTo(controller);
+        new ScrollMagic.Scene({triggerElement: ".someone_say .top p:nth-child(1)", duration: 200})
+            .setTween(".someone_say .bottom", {opacity: 1})
+            .addTo(controller);
+
+        $('#page5 .fourth-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".fourth-container",
+            manualControls: ".fourth-container .control-nav li.control-label",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "fade",
+            start: function (slider) {
+                $("#page5 .fourth-container .control-div").css("margin-top", (-((slider.currentSlide + 1) * 25)) + "px")
+            },
+            before: function (slider) {
+                $("#page5 .fourth-container .control-div").css("margin-top", (-((slider.animatingTo + 1) * 25)) + "px")
+            }
+        });
+
+        var fifthSlider = $('#page5 .fifth-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".fifth-container",
+            manualControls: ".fifth-container .control-nav li.control-label",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            animationLoop: false,
+            slideshow: false,
+            animation: "slide"
+        });
+        $('#page5 .fifth-container .flexslider li.item').click(function () {
+            if (!$(this).hasClass("flex-active-slide")) {
+                $(fifthSlider).data('flexslider').flexAnimate(($('.fifth-container .flexslider li.item').index($(this))), true);
+            }
+        })
+
+    }else if ($("#page6").size() > 0) {
+        $('#page6 .first-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".first-container",
+            manualControls: ".first-container .control-nav li.control-label",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "slide",
+            before: function (slider) {
+                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 25+12.5) + "%");
+            }
+        });
     }
 });
 
