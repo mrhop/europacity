@@ -207,10 +207,10 @@ $(document).ready(function () {
             slideshow: true,
             animation: "fade",
             start: function (slider) {
-                $("#page2 .first-container  .slider_tip").css("left", (slider.currentSlide * 14 + 7) + "%")
+                $("#page2 .first-container  .slider_tip").css("left", (slider.currentSlide * 20 + 10) + "%")
             },
             before: function (slider) {
-                $("#page2 .first-container .slider_tip").css("left", (slider.animatingTo * 14 + 7) + "%")
+                $("#page2 .first-container .slider_tip").css("left", (slider.animatingTo * 20 + 10) + "%")
             }
         });
 

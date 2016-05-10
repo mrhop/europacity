@@ -23,16 +23,26 @@ $navbar-height: 70px !default;
 
 .icomoon-icon-facebook {
   &:before {
-    content: "\e901";
+    content: "\e902";
   }
 }
 
 .icomoon-icon-twitter {
   &:before {
-    content: "\e902";
+    content: "\e903";
+  }
+}
+.icomoon-icon-weibo {
+  &:before {
+    content: "\e901";
   }
 }
 
+.icomoon-icon-wechat {
+  &:before {
+    content: "\e900";
+  }
+}
 .animatedquick {
   -webkit-animation-duration: 500ms;
   animation-duration: 500ms;
@@ -633,6 +643,13 @@ html.home, body#home {
 
 .navbar-fixed-bottom ul.pull-right a.icomoon-icon-twitter:hover {
   color: #1da1f2;
+}
+.navbar-fixed-bottom ul.pull-right a.icomoon-icon-wechat:hover {
+  color: #44b549;
+}
+
+.navbar-fixed-bottom ul.pull-right a.icomoon-icon-weibo:hover {
+  color: #f77c3d;
 }
 
 //PAGE2
