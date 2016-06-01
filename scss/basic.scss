@@ -177,9 +177,16 @@ html.home, body#home {
   background: url(../assets/images/home_slider/3.jpg) no-repeat center center fixed;
   @include background-size(cover);
 }
-
 .index-container ul.home_slider li:nth-child(4) {
-  background: url(../assets/images/home_slider/1.jpg) no-repeat center center fixed;
+  background: url(../assets/images/home_slider/4.jpg) no-repeat center center fixed;
+  @include background-size(cover);
+}
+.index-container ul.home_slider li:nth-child(5) {
+  background: url(../assets/images/home_slider/5.jpg) no-repeat center center fixed;
+  @include background-size(cover);
+}
+.index-container ul.home_slider li:nth-child(6) {
+  background: url(../assets/images/home_slider/6.jpg) no-repeat center center fixed;
   @include background-size(cover);
 }
 

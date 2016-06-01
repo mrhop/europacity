@@ -210,6 +210,8 @@ $(document).ready(function () {
                 $("#page2 .first-container  .slider_tip").css("left", (slider.currentSlide * 20 + 10) + "%")
             },
             before: function (slider) {
+                console.log(slider.animatingTo);
+                console.log(slider.animatingTo * 20 + 10);
                 $("#page2 .first-container .slider_tip").css("left", (slider.animatingTo * 20 + 10) + "%")
             }
         });
