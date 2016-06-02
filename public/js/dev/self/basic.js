@@ -279,7 +279,7 @@ $(document).ready(function () {
             slideshow: true,
             animation: "fade",
             start: function (slider) {
-                $("#page3 .second-container  .circle_current").css("left", (slider.currentSlide * 14.6 + 12.2) + "%");
+                $("#page3 .second-container  .circle_current").css("left", (slider.currentSlide * 12.8 + 11.5) + "%");
                 var begin = Number($(".second-container .holder .distance .value").data("value"));
                 var end = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance"));
                 interruptDistanceFun = utilFun.numberValueChange("number", begin, end, $(".second-container .holder .distance .value"), 80);
@@ -289,7 +289,7 @@ $(document).ready(function () {
 
             },
             before: function (slider) {
-                $("#page3 .second-container .circle_current").css("left", (slider.animatingTo * 14.6 + 12.2) + "%");
+                $("#page3 .second-container .circle_current").css("left", (slider.animatingTo * 12.8 + 11.5) + "%");
                 var begin = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance"));
                 var end = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.animatingTo + 1) + ")").data("distance"));
                 interruptDistanceFun = utilFun.numberValueChange("number", begin, end, $(".second-container .holder .distance .value"), 80);
@@ -465,7 +465,7 @@ $(document).ready(function () {
             }
         })
 
-    }else if ($("#page6").size() > 0) {
+    } else if ($("#page6").size() > 0) {
         $('#page6 .first-container .flexslider').flexslider({
             directionNav: false,
             controlNav: true,
@@ -476,7 +476,7 @@ $(document).ready(function () {
             slideshow: true,
             animation: "slide",
             before: function (slider) {
-                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 25+12.5) + "%");
+                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 25 + 12.5) + "%");
             }
         });
     }
