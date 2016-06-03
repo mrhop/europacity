@@ -476,7 +476,7 @@ $(document).ready(function () {
             slideshow: true,
             animation: "slide",
             before: function (slider) {
-                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 25 + 12.5) + "%");
+                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 20 + 10) + "%");
             }
         });
     }

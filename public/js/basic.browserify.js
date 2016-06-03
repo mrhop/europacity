@@ -23512,7 +23512,7 @@ $(document).ready(function () {
             slideshow: true,
             animation: "slide",
             before: function (slider) {
-                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 25 + 12.5) + "%");
+                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 20 + 10) + "%");
             }
         });
     }
@@ -23587,7 +23587,8 @@ module.exports = (function ($, window, undefined) {
                     if (type == "number") {
                         $(Object).text(begin);
                     }else if(type=="minute"){
-                        $(Object).text(parseInt(begin/60)+":"+begin%60);
+                        //$(Object).text(parseInt(begin/60)+":"+begin%60);
+                        $(Object).text(parseInt(begin/60)+":"+(begin%60>=10?begin%60:'0'+begin%60));
                     }
                     if (begin == end) {
                         window.clearInterval(intervalFun);
@@ -23601,9 +23602,10 @@ module.exports = (function ($, window, undefined) {
         numberValueInterrupt: function (type,data, object, intervalFun) {
             window.clearInterval(intervalFun);
             if (type == "number") {
-                $(Object).text(data);
+                $(object).text(data);
             }else if(type=="minute"){
-                $(Object).text(parseInt(data/60)+":"+data%60);
+                console.log(parseInt(data/60)+":"+(data%60>=10?data%60:'0'+data%60));
+                $(object).text(parseInt(data/60)+":"+(data%60>=10?data%60:'0'+data%60));
             }
             $(object).data("value", data);
         }
