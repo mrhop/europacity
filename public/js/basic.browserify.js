@@ -23368,6 +23368,16 @@ $(document).ready(function () {
             animation: "fade",
             customDirectionNav: $(".custom-navigation a")
         });
+        $('#page4 .second-update-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".second-update-container",
+            manualControls: ".second-update-container .control-nav li.control-label",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "slide"
+        });
         $('#page4 .third-container .bottom .icon').click(function () {
             $("#page4 .third-container .bottom .mask").css("visibility", "visible").css("opacity", 1);
             ;
