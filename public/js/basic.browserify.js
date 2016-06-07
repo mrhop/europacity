@@ -23522,7 +23522,7 @@ $(document).ready(function () {
             slideshow: true,
             animation: "slide",
             before: function (slider) {
-                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 20 + 10) + "%");
+                $("#page6 .first-container .control-div div.circle.direct").css("left", (slider.animatingTo * 14.28 + 7) + "%");
             }
         });
     }
