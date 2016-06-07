@@ -23341,6 +23341,17 @@ $(document).ready(function () {
                 }
             }
         });
+
+        $('#page3 .second-update-container .flexslider').flexslider({
+            directionNav: false,
+            controlNav: true,
+            controlsContainer: ".second-update-container",
+            manualControls: ".second-update-container .control-nav > div",
+            animationSpeed: 1000,
+            slideshowSpeed: 3000,
+            slideshow: true,
+            animation: "fade"
+        });
         var controller = new ScrollMagic.Controller();
         new ScrollMagic.Scene({
             triggerElement: "#page3 .third-container h4",

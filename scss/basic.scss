@@ -32,6 +32,7 @@ $navbar-height: 70px !default;
     content: "\e903";
   }
 }
+
 .icomoon-icon-weibo {
   &:before {
     content: "\e901";
@@ -43,6 +44,7 @@ $navbar-height: 70px !default;
     content: "\e900";
   }
 }
+
 .animatedquick {
   -webkit-animation-duration: 500ms;
   animation-duration: 500ms;
@@ -177,14 +179,17 @@ html.home, body#home {
   background: url(../assets/images/home_slider/3.jpg) no-repeat center center fixed;
   @include background-size(cover);
 }
+
 .index-container ul.home_slider li:nth-child(4) {
   background: url(../assets/images/home_slider/4.jpg) no-repeat center center fixed;
   @include background-size(cover);
 }
+
 .index-container ul.home_slider li:nth-child(5) {
   background: url(../assets/images/home_slider/5.jpg) no-repeat center center fixed;
   @include background-size(cover);
 }
+
 .index-container ul.home_slider li:nth-child(6) {
   background: url(../assets/images/home_slider/6.jpg) no-repeat center center fixed;
   @include background-size(cover);
@@ -651,6 +656,7 @@ html.home, body#home {
 .navbar-fixed-bottom ul.pull-right a.icomoon-icon-twitter:hover {
   color: #1da1f2;
 }
+
 .navbar-fixed-bottom ul.pull-right a.icomoon-icon-wechat:hover {
   color: #44b549;
 }
@@ -1152,6 +1158,107 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   z-index: 2;
 }
 
+#page3 .second-update-container {
+  display: none;
+  width: 100%;
+  height: 1000px;
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+  .bg {
+    z-index: 1;
+    width: 100%;
+    height: 1000px;
+    background: url(../assets/images/page3/bg.jpg) no-repeat scroll center;
+  }
+  .content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    .central {
+      position: relative;
+      width: 1000px;
+      margin: 0 auto;
+      .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        .circle {
+          position: absolute;
+          @include transition(all 200ms linear);
+          @include opacity(0.5);
+          &.flex-active {
+            @include opacity(1);
+          }
+          top: 0;
+          left: 0;
+          background: url(../assets/images/page3/circles.png) no-repeat transparent 0 0;
+          h4 {
+            font-size: 32px;
+            position: absolute;
+            cursor: pointer;
+            letter-spacing: -2px;
+            color: #c6c8cb;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+          }
+          &.big {
+            top: 202px;
+            left: 196px;
+            width: 607px;
+            height: 607px;
+            background-position: 0 0;
+            h4 {
+              top: 70px;
+              left: -160px;
+            }
+          }
+          &.medium {
+            top: 289px;
+            left: 482px;
+            width: 269px;
+            height: 269px;
+            background-position: 0 -657px;
+            h4 {
+              top: 97px;
+              left: -130px;
+            }
+          }
+          &.small {
+            top: 333px;
+            left: 605px;
+            width: 110px;
+            height: 110px;
+            background-position: 0 -976px;
+            h4 {
+              top: -47px;
+              left: 0;
+              width: 390px;
+            }
+          }
+        }
+      }
+    }
+    .flexslider {
+      position: absolute;
+      top: 600px;
+      background: transparent;
+      border: 0;
+      .flex-caption {
+        h4 {
+          margin-bottom: 30px;
+        }
+        h4, .comment {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
 #page3 .third-container {
   background: #181818;
 }
@@ -1351,16 +1458,15 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   background: url(../assets/images/page4/refresh.png) no-repeat center transparent;;
 }
 
-
 #page4 .second-update-container {
   background: #f3f1dc;
   position: relative;
 }
 
-#page4 .second-update-container ul.control-nav{
+#page4 .second-update-container ul.control-nav {
   list-style: none;
   padding-left: 0;
-  .control-label{
+  .control-label {
     display: inline-block;
     text-align: center;
     margin-left: 30px;
@@ -1368,13 +1474,13 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
     text-align: center;
     cursor: pointer;
     margin-left: 0px;
-    h5{
+    h5 {
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       letter-spacing: -2px;
       font-size: 20px;
     }
-    .comment{
+    .comment {
       width: auto;
       margin-bottom: 30px;
     }
@@ -1424,7 +1530,6 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   background: transparent;
   border: none;
 }
-
 
 #page4 .third-container {
   padding: 0;
@@ -1756,7 +1861,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
   font-size: 30px;
   font-weight: bold;
-  img{
+  img {
     width: 285px;
   }
 }
@@ -1767,9 +1872,9 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   left: 200px;
   line-height: 230px;
   z-index: 999;
-   img{
-     width: 230px;
-   }
+  img {
+    width: 230px;
+  }
 }
 
 #page5 .first-container .central .right-top {
@@ -1778,7 +1883,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   right: 166px;
   line-height: 255px;
   z-index: 999;
-  img{
+  img {
     width: 255px;
   }
 }
@@ -1789,7 +1894,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   left: 250px;
   line-height: 198px;
   z-index: 999;
-  img{
+  img {
     width: 198px;
   }
 }
@@ -1800,7 +1905,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   right: 250px;
   line-height: 205px;
   z-index: 999;
-  img{
+  img {
     width: 208px;
   }
 }
@@ -2102,6 +2207,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   color: #fff;
   overflow: hidden;
   padding: 0;
+  //margin-top: 0px;
 }
 
 #page6 .first-container h4 {
@@ -2252,4 +2358,57 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   right: 0;
   left: 50%;
   margin-left: 9px;
+}
+
+#page6 .first-update-container {
+  display: none;
+  margin-top: 70px;
+  .comment {
+    color: #0b262e;
+  }
+  .center-img {
+    display: inline-block;
+    margin-bottom: 40px;
+    width: 950px;
+  }
+}
+
+#page6 .first-update2-container {
+  display: none;
+  height: 1000px;
+  overflow: hidden;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  .bg{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 1000px;
+    background: url(../assets/images/page6/bg.jpg) no-repeat scroll center;
+  }
+   .content {
+     h4,.comment{
+       color: #fff;
+     }
+     .comment{
+       margin-bottom: 30px;
+     }
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+     > ul{
+       list-style: none;
+       padding-left: 0px;
+       width: 800px;
+       margin: 0 auto;
+       li{
+         display: inline-block;
+         width: 33%;
+         margin-bottom: 50px;
+       }
+     }
+  }
 }
