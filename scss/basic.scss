@@ -79,6 +79,8 @@ $navbar-height: 70px !default;
 
 .container-fluid, .container {
   text-align: center;
+  width: 100% !important;
+  min-width: 1300px;
 }
 
 p.comment, span.comment {
@@ -163,36 +165,63 @@ html.home, body#home {
 .index-container ul.home_slider li {
   overflow: hidden;
   height: 100%;
+  @media (max-width: $screen-xs-max) {
+    height: 1000px;
+  }
 }
 
 .index-container ul.home_slider li:first-child {
   background: url(../assets/images/home_slider/1.jpg) no-repeat center center fixed;
   @include background-size(cover);
+  @media (max-width: $screen-xs-max) {
+    @include background-size(auto 1000px);
+    background-position: top center;
+  }
 }
 
 .index-container ul.home_slider li:nth-child(2) {
   background: url(../assets/images/home_slider/2.jpg) no-repeat center center fixed;
   @include background-size(cover);
+  @media (max-width: $screen-xs-max) {
+    @include background-size(auto 1000px);
+    background-position: top center;
+  }
 }
 
 .index-container ul.home_slider li:nth-child(3) {
   background: url(../assets/images/home_slider/3.jpg) no-repeat center center fixed;
   @include background-size(cover);
+  @media (max-width: $screen-xs-max) {
+    @include background-size(auto 1000px);
+    background-position: top center;
+  }
 }
 
 .index-container ul.home_slider li:nth-child(4) {
   background: url(../assets/images/home_slider/4.jpg) no-repeat center center fixed;
   @include background-size(cover);
+  @media (max-width: $screen-xs-max) {
+    @include background-size(auto 1000px);
+    background-position: top center;
+  }
 }
 
 .index-container ul.home_slider li:nth-child(5) {
   background: url(../assets/images/home_slider/5.jpg) no-repeat center center fixed;
   @include background-size(cover);
+  @media (max-width: $screen-xs-max) {
+    @include background-size(auto 1000px);
+    background-position: top center;
+  }
 }
 
 .index-container ul.home_slider li:nth-child(6) {
   background: url(../assets/images/home_slider/6.jpg) no-repeat center center fixed;
   @include background-size(cover);
+  @media (max-width: $screen-xs-max) {
+    @include background-size(auto 1000px);
+    background-position: center center;
+  }
 }
 
 .index-container .flexslider {
@@ -885,23 +914,23 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
 }
 
 #page2 .fourth-container .trigger_p, #page2 .fourth-container .trigger_img1 {
-  top: -100px;
+  top: -500px;
 }
 
 #page2 .fourth-container .trigger_img2 {
-  top: -50px;
+  top: -450px;
 }
 
 #page2 .fourth-container .trigger_img3 {
-  top: 0px;
+  top: -400px;
 }
 
 #page2 .fourth-container .trigger_img4 {
-  top: 50px;
+  top: -350px;
 }
 
 #page2 .fourth-container .trigger_img5 {
-  top: 100px;
+  top: -300px;
 }
 
 #page2 .fifth-container, #page2 .sixth-container {
@@ -2380,35 +2409,35 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   position: relative;
   padding-left: 0;
   padding-right: 0;
-  .bg{
+  .bg {
     position: relative;
     z-index: 1;
     width: 100%;
     height: 1000px;
     background: url(../assets/images/page6/bg.jpg) no-repeat scroll center;
   }
-   .content {
-     h4,.comment{
-       color: #fff;
-     }
-     .comment{
-       margin-bottom: 30px;
-     }
+  .content {
+    h4, .comment {
+      color: #fff;
+    }
+    .comment {
+      margin-bottom: 30px;
+    }
     position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
-     > ul{
-       list-style: none;
-       padding-left: 0px;
-       width: 800px;
-       margin: 0 auto;
-       li{
-         display: inline-block;
-         width: 33%;
-         margin-bottom: 50px;
-       }
-     }
+    > ul {
+      list-style: none;
+      padding-left: 0px;
+      width: 800px;
+      margin: 0 auto;
+      li {
+        display: inline-block;
+        width: 33%;
+        margin-bottom: 50px;
+      }
+    }
   }
 }

@@ -318,7 +318,7 @@ $(document).ready(function () {
         });
         var controller = new ScrollMagic.Controller();
         new ScrollMagic.Scene({
-            triggerElement: "#page3 .third-container h4",
+            triggerElement: "#page3 .second-container h4",
             duration: 200
         })
             .addTo(controller)
@@ -389,16 +389,16 @@ $(document).ready(function () {
             .setTween(".fifth-container .bottom .pull-right", {opacity: 1, marginRight: "300px"})
             .addTo(controller);
 
-        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+        new ScrollMagic.Scene({triggerElement: ".fourth-container", duration: 300})
             .setTween(".someone_say .arrow", {top: "0"})
             .addTo(controller);
-        new ScrollMagic.Scene({triggerElement: ".someone_say .trigger_photo", duration: 300})
+        new ScrollMagic.Scene({triggerElement: ".fourth-container", duration: 300})
             .setTween(".someone_say .img", {top: "100px"})
             .addTo(controller);
-        new ScrollMagic.Scene({triggerElement: ".someone_say .top", duration: 500})
+        new ScrollMagic.Scene({triggerElement: ".fourth-container", duration: 500})
             .setTween(".someone_say .top", {opacity: 1})
             .addTo(controller);
-        new ScrollMagic.Scene({triggerElement: ".someone_say .top p:nth-child(1)", duration: 200})
+        new ScrollMagic.Scene({triggerElement: ".fourth-container", duration: 200})
             .setTween(".someone_say .bottom", {opacity: 1})
             .addTo(controller);
     } else if ($("#page5").size() > 0) {
