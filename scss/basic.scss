@@ -155,74 +155,83 @@ html.home, body#home {
   width: 100%;
   height: 100%;
 }
-
 .index-container ul.home_slider li {
   overflow: hidden;
   height: 100%;
-  @include background-size(cover);
-}
-
-.index-container ul.home_slider li {
-  overflow: hidden;
-  height: 100%;
+  > img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
   @media (max-width: $screen-xs-max) {
-    height: 1000px;
+    > img{
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      height: 100%;
+      z-index: 1;
+    }
   }
 }
-
-.index-container ul.home_slider li:first-child {
-  background: url(../assets/images/home_slider/1.jpg) no-repeat center center fixed;
-  @include background-size(cover);
-  @media (max-width: $screen-xs-max) {
-    @include background-size(auto 1000px);
-    background-position: top center;
-  }
-}
-
-.index-container ul.home_slider li:nth-child(2) {
-  background: url(../assets/images/home_slider/2.jpg) no-repeat center center fixed;
-  @include background-size(cover);
-  @media (max-width: $screen-xs-max) {
-    @include background-size(auto 1000px);
-    background-position: top center;
-  }
-}
-
-.index-container ul.home_slider li:nth-child(3) {
-  background: url(../assets/images/home_slider/3.jpg) no-repeat center center fixed;
-  @include background-size(cover);
-  @media (max-width: $screen-xs-max) {
-    @include background-size(auto 1000px);
-    background-position: top center;
-  }
-}
-
-.index-container ul.home_slider li:nth-child(4) {
-  background: url(../assets/images/home_slider/4.jpg) no-repeat center center fixed;
-  @include background-size(cover);
-  @media (max-width: $screen-xs-max) {
-    @include background-size(auto 1000px);
-    background-position: top center;
-  }
-}
-
-.index-container ul.home_slider li:nth-child(5) {
-  background: url(../assets/images/home_slider/5.jpg) no-repeat center center fixed;
-  @include background-size(cover);
-  @media (max-width: $screen-xs-max) {
-    @include background-size(auto 1000px);
-    background-position: top center;
-  }
-}
-
-.index-container ul.home_slider li:nth-child(6) {
-  background: url(../assets/images/home_slider/6.jpg) no-repeat center center fixed;
-  @include background-size(cover);
-  @media (max-width: $screen-xs-max) {
-    @include background-size(auto 1000px);
-    background-position: center center;
-  }
-}
+//
+//.index-container ul.home_slider li:first-child {
+//  background: url(../assets/images/home_slider/1.jpg) no-repeat center center fixed;
+//  @include background-size(cover);
+//  @media (max-width: $screen-xs-max) {
+//    @include background-size(auto 1000px);
+//    background-position: top center;
+//  }
+//}
+//
+//.index-container ul.home_slider li:nth-child(2) {
+//  background: url(../assets/images/home_slider/2.jpg) no-repeat center center fixed;
+//  @include background-size(cover);
+//  @media (max-width: $screen-xs-max) {
+//    @include background-size(auto 1000px);
+//    background-position: top center;
+//  }
+//}
+//
+//.index-container ul.home_slider li:nth-child(3) {
+//  background: url(../assets/images/home_slider/3.jpg) no-repeat center center fixed;
+//  @include background-size(cover);
+//  @media (max-width: $screen-xs-max) {
+//    @include background-size(auto 1000px);
+//    background-position: top center;
+//  }
+//}
+//
+//.index-container ul.home_slider li:nth-child(4) {
+//  background: url(../assets/images/home_slider/4.jpg) no-repeat center center fixed;
+//  @include background-size(cover);
+//  @media (max-width: $screen-xs-max) {
+//    @include background-size(auto 1000px);
+//    background-position: top center;
+//  }
+//}
+//
+//.index-container ul.home_slider li:nth-child(5) {
+//  background: url(../assets/images/home_slider/5.jpg) no-repeat center center fixed;
+//  @include background-size(cover);
+//  @media (max-width: $screen-xs-max) {
+//    @include background-size(auto 1000px);
+//    background-position: top center;
+//  }
+//}
+//
+//.index-container ul.home_slider li:nth-child(6) {
+//  background: url(../assets/images/home_slider/6.jpg) no-repeat center center fixed;
+//  @include background-size(cover);
+//  @media (max-width: $screen-xs-max) {
+//    @include background-size(auto 1000px);
+//    background-position: center center;
+//  }
+//}
 
 .index-container .flexslider {
   height: 100%;
@@ -240,6 +249,10 @@ html.home, body#home {
   width: 100%;
   text-align: center;
   color: #eade1c;
+  @media (max-width: $screen-xs-max) {
+      position: fixed;
+      top: 50%;
+  }
 }
 
 #home .flex-caption span.glyphicon-play-circle {
@@ -275,10 +288,10 @@ html.home, body#home {
   height: 100%;
 }
 
-.index-container .flexslider .item:hover > img {
-
-  @include scale(1.25);
-}
+//.index-container .flexslider .item:hover > img {
+//
+//  @include scale(1.25);
+//}
 
 //.index-container mask
 .index-container .mask {
