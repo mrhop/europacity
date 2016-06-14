@@ -106,6 +106,9 @@ span.comment {
 
 nav.navbar-fixed-top {
   box-shadow: 1px 3px 5px;
+  .container-fluid, .container {
+    min-width: 1px;
+  }
 }
 
 .navbar .language {
@@ -142,6 +145,7 @@ html.home, body#home {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+  min-width: 1px;
 }
 
 .index-container .flexslider {
