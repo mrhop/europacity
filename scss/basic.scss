@@ -241,6 +241,9 @@ html.home, body#home {
   height: 100%;
   margin-bottom: 0px;
 }
+#home .first-container {
+  margin-top: 0;
+}
 
 #home .flex-caption {
   z-index: 1000;
@@ -307,6 +310,7 @@ html.home, body#home {
   bottom: 0;
   background-color: rgba(33, 33, 33, 0.3);
   visibility: hidden;
+  margin-top: $navbar-height;
 }
 
 .index-container .mask > .container-fluid {
@@ -316,6 +320,7 @@ html.home, body#home {
 .index-container .mask .container-fluid {
   padding-left: 0;
   padding-right: 0;
+  min-width: 1px;
 }
 
 .index-container .mask > .container-fluid > .colum {
@@ -635,10 +640,41 @@ html.home, body#home {
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
 }
+.mask .contact{
+  h4.subtitle{
+    margin: 40px auto 30px;
+  }
+  .comment{
+    margin-bottom: 20px;
+    width: auto;
+    &.bottom{
+      width: 500px;
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
+  }
+  .form-control{
+    width: 200px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  input[type='text'].form-control{
+    text-transform: uppercase;
+  }
+  .contact-info{
+    width: 322px;
+    margin: 50px auto;
+    padding: 30px 0;
+    text-align: center;
+    border: 1px dashed #b9b9b9;
+  }
+}
 
 #dituContent {
   height: 550px;
   border: #ccc solid 1px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .mask .press_list .colum.bottom, .mask .media .colum.bottom, .mask .contact .colum.bottom {
@@ -789,6 +825,21 @@ html.home, body#home {
 #page2 .second-container div.video {
   position: relative;
   margin-bottom: 50px;
+  text-align: left;
+  p.comment{
+    font-style: normal;
+    color: #000;
+    margin-bottom: 5px;
+    width: 800px;
+  }
+  ul{
+    margin: 0 auto;
+    width: 800px;
+    li{
+      margin-left: -20px;
+      font-style: italic;
+    }
+  }
 }
 
 .container h4, .container-fluid h4 {
@@ -1299,6 +1350,9 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
         }
         h4, .comment {
           color: #fff;
+        }
+        .comment{
+          margin-bottom: 5px;
         }
       }
     }
