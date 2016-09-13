@@ -660,6 +660,7 @@ html.home, body#home {
   }
   input[type='text'].form-control{
     text-transform: uppercase;
+    @include placeholder(#555555);
   }
   .contact-info{
     width: 322px;
