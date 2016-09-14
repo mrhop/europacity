@@ -44,6 +44,17 @@ $navbar-height: 70px !default;
     content: "\e900";
   }
 }
+.icomoon-icon-linkedin {
+  &:before {
+    content: "\e904";
+  }
+}
+
+.icomoon-icon-xing {
+  &:before {
+    content: "\e905";
+  }
+}
 
 .animatedquick {
   -webkit-animation-duration: 500ms;
@@ -746,6 +757,14 @@ html.home, body#home {
 
 .navbar-fixed-bottom ul.pull-right a.icomoon-icon-weibo:hover {
   color: #f77c3d;
+}
+
+.navbar-fixed-bottom ul.pull-right a.icomoon-icon-linkedin:hover {
+  color: #0077b5;
+}
+
+.navbar-fixed-bottom ul.pull-right a.icomoon-icon-xing:active {
+  color: #fff;
 }
 
 //PAGE2
