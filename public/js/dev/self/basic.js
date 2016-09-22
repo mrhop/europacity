@@ -196,6 +196,16 @@ $(document).ready(function () {
                 }
             });
         });
+        //news detail shows content 
+        $('.news-single .news-brief').click(function(){
+            var parent = $(this).parent();
+            if(parent.height()==240){
+                //need to extend
+                parent.height(240+$(parent).find('.news-content').outerHeight());
+            }else{
+                parent.height(240);
+            }
+        })
     } else if ($("#page2").size() > 0) {
         $('#page2 .first-container .flexslider').flexslider({
             directionNav: false,
