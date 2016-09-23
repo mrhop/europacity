@@ -136,6 +136,15 @@ nav.navbar-fixed-top {
   }
 }
 
+.navbar-nav.nav {
+  > li {
+    > a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
 .navbar-inverse .navbar-nav li:hover {
   color: #fff;
   background-color: #090909;
