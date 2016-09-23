@@ -289,7 +289,7 @@ $(document).ready(function () {
             slideshow: true,
             animation: "fade",
             start: function (slider) {
-                $("#page3 .second-container  .circle_current").css("left", (slider.currentSlide * 12.8 + 11.5) + "%");
+                $("#page3 .second-container  .circle_current").css("left", (slider.currentSlide * 12.4 + 11.5) + "%");
                 var begin = Number($(".second-container .holder .distance .value").data("value"));
                 var end = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance"));
                 interruptDistanceFun = utilFun.numberValueChange("number", begin, end, $(".second-container .holder .distance .value"), 80);
@@ -299,7 +299,7 @@ $(document).ready(function () {
 
             },
             before: function (slider) {
-                $("#page3 .second-container .circle_current").css("left", (slider.animatingTo * 12.8 + 11.5) + "%");
+                $("#page3 .second-container .circle_current").css("left", (slider.animatingTo * 12.4 + 11.5) + "%");
                 var begin = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.currentSlide + 1) + ")").data("distance"));
                 var end = Number($(".second-container .bottom .control-nav li:nth-child(" + (slider.animatingTo + 1) + ")").data("distance"));
                 interruptDistanceFun = utilFun.numberValueChange("number", begin, end, $(".second-container .holder .distance .value"), 80);
