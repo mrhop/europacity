@@ -205,6 +205,9 @@ $(document).ready(function () {
             }else{
                 parent.height(240);
             }
+        })  
+        $('.news-single .news-brief .news_title a').click(function(e){
+            e.preventDefault()
         })
     } else if ($("#page2").size() > 0) {
         $('#page2 .first-container .flexslider').flexslider({

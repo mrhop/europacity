@@ -442,6 +442,10 @@ html.home, body#home {
           text-transform: uppercase;
           color: #545454;
           font-weight: bold;
+          a, a:hover, a:active, a:visited {
+            color: #545454;
+            text-decoration: none;
+          }
         }
         .news_description p {
           font-size: 14px;
@@ -467,6 +471,11 @@ html.home, body#home {
         b {
           color: #333;
         }
+      }
+    }
+    &:nth-child(odd) {
+      .col-xs-5 {
+        float: right;
       }
     }
   }
