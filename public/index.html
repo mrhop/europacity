@@ -12,7 +12,8 @@
     <script type="text/javascript" src="js/basic.browserify.js"></script>
     <script type="text/javascript" src="js/dev/holder.min.js"></script>
     <!--map-->
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1172a837260421821f4684980b6a021e"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=1172a837260421821f4684980b6a021e"></script>
     <!--map end-->
 </head>
 <body id="home">
@@ -363,99 +364,120 @@
                     <div id="map"></div>
                     <script type="text/javascript">
                         //创建和初始化地图函数：
-                        function initMap(){
+                        function initMap() {
                             createMap();//创建地图
                             setMapEvent();//设置地图事件
                             addMapControl();//向地图添加控件
                             addMapOverlay();//向地图添加覆盖物
                         }
-                        function createMap(){
+                        function createMap() {
                             map = new BMap.Map("map");
-                            map.centerAndZoom(new BMap.Point(114.342946,22.764321),13);
+                            map.centerAndZoom(new BMap.Point(114.342946, 22.764321), 13);
                         }
-                        function setMapEvent(){
+                        function setMapEvent() {
                             map.enableScrollWheelZoom();
                             map.enableKeyboard();
                             map.enableDragging();
                             map.enableDoubleClickZoom()
                         }
-                        function addClickHandler(target,window){
-                            target.addEventListener("click",function(){
+                        function addClickHandler(target, window) {
+                            target.addEventListener("click", function () {
                                 target.openInfoWindow(window);
                             });
                         }
-                        function addMapOverlay(){
+                        function addMapOverlay() {
                             var markers = [
-                                {content:"中欧未来城（CEFC）",title:"China Eu Future City",imageOffset: {width:-23,height:-21},position:{lat:22.746724,lng:114.319661}}
+                                {
+                                    content: "中欧未来城（CEFC）",
+                                    title: "China Eu Future City",
+                                    imageOffset: {width: -23, height: -21},
+                                    position: {lat: 22.746724, lng: 114.319661}
+                                }
                             ];
-                            for(var index = 0; index < markers.length; index++ ){
-                                var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
-                                var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
-                                    imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
-                                })});
-                                var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+                            for (var index = 0; index < markers.length; index++) {
+                                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+                                var marker = new BMap.Marker(point, {
+                                    icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+                                        imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                                    })
+                                });
+                                var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5)});
                                 var opts = {
                                     width: 200,
                                     title: markers[index].title,
                                     enableMessage: false
                                 };
-                                var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+                                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
                                 marker.setLabel(label);
-                                addClickHandler(marker,infoWindow);
+                                addClickHandler(marker, infoWindow);
                                 map.addOverlay(marker);
-                            };
+                            }
+                            ;
                         }
                         //向地图添加控件
-                        function addMapControl(){
-                            var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+                        function addMapControl() {
+                            var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
                             scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
                             map.addControl(scaleControl);
-                            var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                            var navControl = new BMap.NavigationControl({
+                                anchor: BMAP_ANCHOR_TOP_LEFT,
+                                type: BMAP_NAVIGATION_CONTROL_LARGE
+                            });
                             map.addControl(navControl);
-                            var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+                            var overviewControl = new BMap.OverviewMapControl({
+                                anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                                isOpen: true
+                            });
                             map.addControl(overviewControl);
                         }
                         var map;
                         initMap();
                     </script>
-                    <div class="colum col-xs-12">
-                        <h4 class="subtitle">NEWSLETTER</h4>
-                        <p class="comment">By subscribing to the Future City newsletter, you will be kept informed of the
-                            latest news about the project.</p>
-                        <!--<div class="colum col-xs-6"><input type="text" placeholder="Name*"-->
-                                                           <!--class="form-control pull-right"/></div>-->
-                        <!--<div class="colum col-xs-6"><input type="text" placeholder="First Name*"-->
-                                                           <!--class="form-control pull-left"/></div>-->
-                        <!--<div class="colum col-xs-6"><input type="text" placeholder="Email*"-->
-                                                           <!--class="form-control pull-right"/></div>-->
-                        <!--<div class="colum col-xs-6"><select class="form-control pull-left">-->
-                            <!--<option value="" disabled selected>You Are*</option>-->
-                            <!--<option value="company">Company</option>-->
-                            <!--<option value="institutional">Institutional</option>-->
-                            <!--<option value="media">Media</option>-->
-                            <!--<option value="organization">Organization</option>-->
-                            <!--<option value="particular">Private individual</option>-->
-                            <!--<option value="researcher">Researcher</option>-->
-                            <!--<option value="student">Student</option>-->
-                        <!--</select></div>-->
-                        <!--<div class="colum col-xs-6"><input type="text" placeholder="Message*"-->
-                                                           <!--class="form-control pull-right"/></div>-->
-                        <!--<div class="colum col-xs-12">-->
-                            <!--<button type="button" class="btn btn-primary">SEND <span-->
-                                    <!--class="glyphicon glyphicon-chevron-right" style="margin-left: 10px;"></span>-->
-                            <!--</button>-->
-                        <!--</div>-->
-                        <!--<div class="colum col-xs-12"><p class="comment bottom">Fields marked with an asterisk are-->
-                            <!--required. In the absence of a reply, we will not be able to process your request.</p></div>-->
+                    <form id="form-newsletter">
                         <div class="colum col-xs-12">
-                            Email: <a href="mailto:newsletter@eurosinoinvest.com">newsletter@eurosinoinvest.com</a>
+                            <h4 class="subtitle">NEWSLETTER</h4>
+                            <p class="comment">By subscribing to the Future City newsletter, you will be kept informed
+                                of the
+                                latest news about the project.</p>
+                            <div class="colum col-xs-6"><input type="text" placeholder="Name*"
+                                                               class="form-control pull-right newsletter-name"/></div>
+                            <div class="colum col-xs-6"><input type="text" placeholder="First Name*"
+                                                               class="form-control pull-left newsletter-first-name"/></div>
+                            <div class="colum col-xs-6"><input type="text" placeholder="Email*"
+                                                               class="form-control pull-right newsletter-email"/></div>
+                            <div class="colum col-xs-6"><select class="form-control pull-left newsletter-job">
+                                <option value="" disabled selected>You Are*</option>
+                                <option value="company">Company</option>
+                                <option value="institutional">Institutional</option>
+                                <option value="media">Media</option>
+                                <option value="organization">Organization</option>
+                                <option value="particular">Private individual</option>
+                                <option value="researcher">Researcher</option>
+                                <option value="student">Student</option>
+                            </select></div>
+                            <div class="colum col-xs-6"><input type="text"  placeholder="Message*"
+                                                               class="form-control pull-right newsletter-message"/></div>
+                            <div class="colum col-xs-12">
+                                <input type="hidden" id="newsletter-subject" value="newsletter"/>
+                                <!--<input type="hidden" id="newsletter-toMail" value="newsletter@eurosinoinvest.com"/>-->
+                                <input type="hidden" id="newsletter-toMail" value="donghui.huo@eurosinoinvest.com"/>
+                                <button type="button" class="btn btn-primary newsletter-submit">SEND <span
+                                        class="glyphicon glyphicon-chevron-right" style="margin-left: 10px;"></span>
+                                </button>
+                            </div>
+                            <div class="colum col-xs-12"><p class="comment bottom">Fields marked with an asterisk are
+                                required. In the absence of a reply, we will not be able to process your request.</p>
+                            </div>
+                            <div class="colum col-xs-12">
+                                Email: <a href="mailto:newsletter@eurosinoinvest.com">newsletter@eurosinoinvest.com</a>
+                            </div>
+                            <!--<div class="colum col-xs-12"><div class="contact-info">-->
+                            <!--<h5 style="font-weight: bold">PRESS CONTACT</h5>-->
+                            <!--<p><a href="mailto:**@cefc.com">**@cefc.com</a></p>-->
+                            <!--<p>086 1XX XX XX XX XX</p>-->
+                            <!--</div></div>-->
                         </div>
-                        <!--<div class="colum col-xs-12"><div class="contact-info">-->
-                        <!--<h5 style="font-weight: bold">PRESS CONTACT</h5>-->
-                        <!--<p><a href="mailto:**@cefc.com">**@cefc.com</a></p>-->
-                        <!--<p>086 1XX XX XX XX XX</p>-->
-                        <!--</div></div>-->
-                    </div>
+                    </form>
                     <div class="colum bottom col-xs-12"></div>
                 </div>
             </div>

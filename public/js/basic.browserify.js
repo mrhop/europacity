@@ -23245,6 +23245,32 @@ $(document).ready(function () {
         $('.news-single .news-brief .news_title a').click(function(e){
             e.preventDefault()
         })
+        $('#form-newsletter .newsletter-submit').click(function(e){
+            if(!$('#form-newsletter .newsletter-name').val()||!$('#form-newsletter .newsletter-first-name').val()||!$('#form-newsletter .newsletter-email').val()||!$('#form-newsletter .newsletter-job').val()||!$('#form-newsletter .newsletter-message').val()){
+                alert('Fields marked with an asterisk are required');
+            }else{
+                $.ajax({
+                    method: 'GET',
+                    url: "http://localhost:8080/cmsbackend/form/sendMail",
+                    dataType: "jsonp",
+                    data:{toMail:$('#newsletter-toMail').val(),subject:$('#newsletter-subject').val(),
+                        content:'<ul><li>Name: '+$('#form-newsletter .newsletter-name').val()+'</li>' +
+                                       '<li>First Name: '+$('#form-newsletter .newsletter-first-name').val()+'</li>' +
+                                       '<li>Email: '+$('#form-newsletter .newsletter-email').val()+'</li>' +
+                                       '<li>Job: '+$('#form-newsletter .newsletter-job').val()+'</li>' +
+                                       '<li>Message: '+$('#form-newsletter .newsletter-message').val()+'</li></ul>'},
+                    jsonp: 'callback',
+                    jsonpCallback: 'newsletter_callback',
+                    success: function(data){
+                        if(data.success){
+                            alert('we will response to you as soon as possible')
+                            $('#form-newsletter')[0].reset();
+                        }
+                    }
+                });
+            }
+            e.preventDefault()
+        })
     } else if ($("#page2").size() > 0) {
         $('#page2 .first-container .flexslider').flexslider({
             directionNav: false,
