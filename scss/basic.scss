@@ -19,43 +19,54 @@ $navbar-height: 70px !default;
 
 .icomoon-icon {
   font-family: "Icomoon Icon" !important;
-}
-
-.icomoon-icon-facebook {
-  &:before {
-    content: "\e902";
+  img{
+    width: 16px;
   }
 }
 
-.icomoon-icon-twitter {
+.glyphicon-remove{
   &:before {
-    content: "\e903";
+    content: " ";
   }
+  background: url('../assets/images/home/icon/x.png')  no-repeat center ;
+  background-size: 15px 15px ;
 }
 
-.icomoon-icon-weibo {
-  &:before {
-    content: "\e901";
-  }
-}
+//.icomoon-icon-facebook {
+//  &:before {
+//    content: "\e902";
+//  }
+//}
+//
+//.icomoon-icon-twitter {
+//  &:before {
+//    content: "\e903";
+//  }
+//}
+//
+//.icomoon-icon-weibo {
+//  &:before {
+//    content: "\e901";
+//  }
+//}
 
-.icomoon-icon-wechat {
-  &:before {
-    content: "\e900";
-  }
-}
-
-.icomoon-icon-linkedin {
-  &:before {
-    content: "\e904";
-  }
-}
-
-.icomoon-icon-xing {
-  &:before {
-    content: "\e905";
-  }
-}
+//.icomoon-icon-wechat {
+//  &:before {
+//    content: "\e900";
+//  }
+//}
+//
+//.icomoon-icon-linkedin {
+//  &:before {
+//    content: "\e904";
+//  }
+//}
+//
+//.icomoon-icon-xing {
+//  &:before {
+//    content: "\e905";
+//  }
+//}
 
 .animatedquick {
   -webkit-animation-duration: 500ms;
@@ -2158,6 +2169,9 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   font-size: 35px;
   font-weight: 100;
   color: white;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
 }
 
 #page5 .second-container div.direct.closed span.glyphicon-remove {
@@ -2170,6 +2184,13 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   top: 35px;
   @include opacity(0);
   display: none;
+  &:before{
+    content: " ";
+  }
+  background: url(../assets/images/home/icon/right.png) no-repeat center;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
 }
 
 #page5 .second-container div.direct.closed span.glyphicon-chevron-right {
