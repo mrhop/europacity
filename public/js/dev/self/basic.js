@@ -24,8 +24,8 @@ $(document).ready(function () {
             fadeFirstSlide: false,
             controlNav: false,
             directionNav: false,
-            animationSpeed: 500,
-            slideshowSpeed: 3000,
+            animationSpeed: 1000,
+            slideshowSpeed: 5000,
             slideshow: true,
             start: function (slider) {
                 utilFun.animate("#home .flex-active-slide .animated");
