@@ -1683,6 +1683,22 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   }
 }
 
+#page4 .second-update-container {
+  .flexslider .slides .item{
+    h5 {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      font-size: 20px;
+    }
+    .comment {
+      font-size: 15px;
+      width: auto;
+      margin-bottom: 30px;
+    }
+  }
+}
+
 #page4 .second-update-container ul.bottom {
   list-style: none;
   padding: 0;
