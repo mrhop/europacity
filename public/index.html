@@ -12,8 +12,8 @@
     <script type="text/javascript" src="js/basic.browserify.js"></script>
     <script type="text/javascript" src="js/dev/holder.min.js"></script>
     <!--map-->
-    <script type="text/javascript"
-            src="http://api.map.baidu.com/api?v=2.0&ak=1172a837260421821f4684980b6a021e"></script>
+    <!--<script type="text/javascript"-->
+    <!--src="http://api.map.baidu.com/api?v=2.0&ak=1172a837260421821f4684980b6a021e"></script>-->
     <!--map end-->
 </head>
 <body id="home">
@@ -98,6 +98,41 @@
                 <h2>News</h2>
 
                 <div class="news_list container-fluid">
+                    <div class="news-single">
+                        <div class="news-brief">
+                            <div class="colum col-xs-5 content">
+                                <div class="date">
+                                    <span class="news_date">21 NOV. 16</span>
+                                </div>
+                                <div class="news_title">
+                                    <h3>CEFC Senior Care Facility Launch Ceremony & Medical Cluster Conference</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-brief">
+                            <div class="colum col-xs-7">
+                                <img src="assets/images/home/news_2.jpg"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 news-content">
+                            <p>It was a celebratory day in Shenzhen on November 21, 2016. The China EU Future City held
+                                its first annual Medical Cluster Conference and held a ceremony on launching the CEFC
+                                Senior Care Facility.</p>
+                            <p>Both events held in the morning were joined by a delegation of German government
+                                officials from the Mayor of Erlangen City, Dr. Florian Javik, who presented at the
+                                conference and was in Shenzhen to promote greater ties between the two cities. The Mayor
+                                was also joined by Matthias Hegel, a Managing Director from the Medical Valley Center
+                                and Dr. Friedrich von Tucher, partner with Euro Sino Invest – Technology Expansion
+                                Partners.</p>
+                            <p>As China’s population begins to age more rapidly, elderly care and living are going to
+                                become a higher priority in Chinese society. In this spirit, the conference saw
+                                presentations on the role European Medical Clusters and Dual Education will play in the
+                                CEFC Senior Care Facility and the impact it will have on China – Europe cooperation in
+                                these areas. The Senior Care Facility will have a vocational training campus nearby,
+                                thereby creating new opportunities for students to learn on the job on best practices
+                                and training to assist in caring for elderly Chinese.</p>
+                        </div>
+                    </div>
                     <div class="news-single">
                         <div class="news-brief">
                             <div class="colum col-xs-5 content">
@@ -362,77 +397,77 @@
 
                 <div class="container-fluid">
                     <div id="map"></div>
-                    <script type="text/javascript">
-                        //创建和初始化地图函数：
-                        function initMap() {
-                            createMap();//创建地图
-                            setMapEvent();//设置地图事件
-                            addMapControl();//向地图添加控件
-                            addMapOverlay();//向地图添加覆盖物
-                        }
-                        function createMap() {
-                            map = new BMap.Map("map");
-                            map.centerAndZoom(new BMap.Point(114.342946, 22.764321), 13);
-                        }
-                        function setMapEvent() {
-                            map.enableScrollWheelZoom();
-                            map.enableKeyboard();
-                            map.enableDragging();
-                            map.enableDoubleClickZoom()
-                        }
-                        function addClickHandler(target, window) {
-                            target.addEventListener("click", function () {
-                                target.openInfoWindow(window);
-                            });
-                        }
-                        function addMapOverlay() {
-                            var markers = [
-                                {
-                                    content: "中欧未来城（CEFC）",
-                                    title: "China Eu Future City",
-                                    imageOffset: {width: -23, height: -21},
-                                    position: {lat: 22.746724, lng: 114.319661}
-                                }
-                            ];
-                            for (var index = 0; index < markers.length; index++) {
-                                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
-                                var marker = new BMap.Marker(point, {
-                                    icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
-                                        imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
-                                    })
-                                });
-                                var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5)});
-                                var opts = {
-                                    width: 200,
-                                    title: markers[index].title,
-                                    enableMessage: false
-                                };
-                                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
-                                marker.setLabel(label);
-                                addClickHandler(marker, infoWindow);
-                                map.addOverlay(marker);
-                            }
-                            ;
-                        }
-                        //向地图添加控件
-                        function addMapControl() {
-                            var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
-                            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-                            map.addControl(scaleControl);
-                            var navControl = new BMap.NavigationControl({
-                                anchor: BMAP_ANCHOR_TOP_LEFT,
-                                type: BMAP_NAVIGATION_CONTROL_LARGE
-                            });
-                            map.addControl(navControl);
-                            var overviewControl = new BMap.OverviewMapControl({
-                                anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
-                                isOpen: true
-                            });
-                            map.addControl(overviewControl);
-                        }
-                        var map;
-                        initMap();
-                    </script>
+                    <!--<script type="text/javascript">-->
+                    <!--//创建和初始化地图函数：-->
+                    <!--function initMap() {-->
+                    <!--createMap();//创建地图-->
+                    <!--setMapEvent();//设置地图事件-->
+                    <!--addMapControl();//向地图添加控件-->
+                    <!--addMapOverlay();//向地图添加覆盖物-->
+                    <!--}-->
+                    <!--function createMap() {-->
+                    <!--map = new BMap.Map("map");-->
+                    <!--map.centerAndZoom(new BMap.Point(114.342946, 22.764321), 13);-->
+                    <!--}-->
+                    <!--function setMapEvent() {-->
+                    <!--map.enableScrollWheelZoom();-->
+                    <!--map.enableKeyboard();-->
+                    <!--map.enableDragging();-->
+                    <!--map.enableDoubleClickZoom()-->
+                    <!--}-->
+                    <!--function addClickHandler(target, window) {-->
+                    <!--target.addEventListener("click", function () {-->
+                    <!--target.openInfoWindow(window);-->
+                    <!--});-->
+                    <!--}-->
+                    <!--function addMapOverlay() {-->
+                    <!--var markers = [-->
+                    <!--{-->
+                    <!--content: "中欧未来城（CEFC）",-->
+                    <!--title: "China Eu Future City",-->
+                    <!--imageOffset: {width: -23, height: -21},-->
+                    <!--position: {lat: 22.746724, lng: 114.319661}-->
+                    <!--}-->
+                    <!--];-->
+                    <!--for (var index = 0; index < markers.length; index++) {-->
+                    <!--var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);-->
+                    <!--var marker = new BMap.Marker(point, {-->
+                    <!--icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {-->
+                    <!--imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)-->
+                    <!--})-->
+                    <!--});-->
+                    <!--var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5)});-->
+                    <!--var opts = {-->
+                    <!--width: 200,-->
+                    <!--title: markers[index].title,-->
+                    <!--enableMessage: false-->
+                    <!--};-->
+                    <!--var infoWindow = new BMap.InfoWindow(markers[index].content, opts);-->
+                    <!--marker.setLabel(label);-->
+                    <!--addClickHandler(marker, infoWindow);-->
+                    <!--map.addOverlay(marker);-->
+                    <!--}-->
+                    <!--;-->
+                    <!--}-->
+                    <!--//向地图添加控件-->
+                    <!--function addMapControl() {-->
+                    <!--var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});-->
+                    <!--scaleControl.setUnit(BMAP_UNIT_IMPERIAL);-->
+                    <!--map.addControl(scaleControl);-->
+                    <!--var navControl = new BMap.NavigationControl({-->
+                    <!--anchor: BMAP_ANCHOR_TOP_LEFT,-->
+                    <!--type: BMAP_NAVIGATION_CONTROL_LARGE-->
+                    <!--});-->
+                    <!--map.addControl(navControl);-->
+                    <!--var overviewControl = new BMap.OverviewMapControl({-->
+                    <!--anchor: BMAP_ANCHOR_BOTTOM_RIGHT,-->
+                    <!--isOpen: true-->
+                    <!--});-->
+                    <!--map.addControl(overviewControl);-->
+                    <!--}-->
+                    <!--var map;-->
+                    <!--initMap();-->
+                    <!--</script>-->
                     <form id="form-newsletter">
                         <div class="colum col-xs-12">
                             <h4 class="subtitle">NEWSLETTER</h4>
@@ -510,6 +545,21 @@
         <!--<li><a class="icomoon-icon icomoon-icon-wechat"></a></li>-->
         <!--<li><a class="icomoon-icon icomoon-icon-weibo"></a></li>-->
     </ul>
+    <ul class="row bottom-sub" style="clear: both;text-align: center;height: 40px;background: #000">
+        <li class="col-md-4"></li>
+        <li class="col-md-4 video"><img src="assets/images/home/play-circle.png" style="width: 40px;"/></li>
+        <li class="col-md-4"></li>
+    </ul>
+    <div class="mask-bottom">
+        <div class="content">
+            <span class="glyphicon glyphicon-remove"></span>
+            <iframe src="https://player.vimeo.com/video/193982112" width="100%" height="100%" frameborder="0"
+                    webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <p><a href="https://vimeo.com/193982112">CEFC - Medical Cluster Conference</a> from <a
+                    href="https://vimeo.com/chinaeufuturecity">China EU Future City</a> on <a
+                    href="https://vimeo.com">Vimeo</a>.</p>
+        </div>
+    </div>
 </nav>
 </body>
 </html>

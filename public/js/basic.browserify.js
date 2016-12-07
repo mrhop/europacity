@@ -23080,7 +23080,12 @@ $(document).ready(function () {
         })
 
         $('#home .scroll-div').perfectScrollbar({"maxScrollbarLength": 50});
-
+        //！！！需要继续处理
+        $('#home .scroll-div .ps-scrollbar-y').mousedown(function(){
+            $('#home').one('mouseup', function(e){
+                home_section_flag = false;
+            });
+        })
         $('#home .news-a').click(function () {
             if (!$('#home .news-a').hasClass("active") && home_section_flag) {
                 home_section_flag = false;
@@ -23106,7 +23111,6 @@ $(document).ready(function () {
                 }
             }
         })
-
         $('#home .press-a').click(function () {
             if (!$('#home .press-a').hasClass("active") && home_section_flag) {
                 home_section_flag = false;
@@ -23194,6 +23198,7 @@ $(document).ready(function () {
 
             }
         })
+
         $('#home .mask').click(function () {
             if (event.target.className == "mask" && home_section_flag) {
                 home_section_flag = false;
@@ -23204,6 +23209,9 @@ $(document).ready(function () {
                     $(".navbar-fixed-bottom .pull-left a").removeClass("active")
                     home_section_flag = true;
                 });
+            }
+            if(event.target.className == "mask" && !home_section_flag){
+                home_section_flag = true;
             }
         })
         $('#home .mask .glyphicon-remove').click(function () {
@@ -23233,36 +23241,38 @@ $(document).ready(function () {
             });
         });
         //news detail shows content 
-        $('.news-single .news-brief').click(function(){
+        $('.news-single .news-brief').click(function () {
             var parent = $(this).parent();
-            if(parent.height()==240){
+            if (parent.height() == 240) {
                 //need to extend
-                parent.height(240+$(parent).find('.news-content').outerHeight());
-            }else{
+                parent.height(240 + $(parent).find('.news-content').outerHeight());
+            } else {
                 parent.height(240);
             }
-        })  
-        $('.news-single .news-brief .news_title a').click(function(e){
+        })
+        $('.news-single .news-brief .news_title a').click(function (e) {
             e.preventDefault()
         })
-        $('#form-newsletter .newsletter-submit').click(function(e){
-            if(!$('#form-newsletter .newsletter-name').val()||!$('#form-newsletter .newsletter-first-name').val()||!$('#form-newsletter .newsletter-email').val()||!$('#form-newsletter .newsletter-job').val()||!$('#form-newsletter .newsletter-message').val()){
+        $('#form-newsletter .newsletter-submit').click(function (e) {
+            if (!$('#form-newsletter .newsletter-name').val() || !$('#form-newsletter .newsletter-first-name').val() || !$('#form-newsletter .newsletter-email').val() || !$('#form-newsletter .newsletter-job').val() || !$('#form-newsletter .newsletter-message').val()) {
                 alert('Fields marked with an asterisk are required');
-            }else{
+            } else {
                 $.ajax({
                     method: 'GET',
                     url: "http://localhost:8080/cmsbackend/form/sendMail",
                     dataType: "jsonp",
-                    data:{toMail:$('#newsletter-toMail').val(),subject:$('#newsletter-subject').val(),
-                        content:'<ul><li>Name: '+$('#form-newsletter .newsletter-name').val()+'</li>' +
-                                       '<li>First Name: '+$('#form-newsletter .newsletter-first-name').val()+'</li>' +
-                                       '<li>Email: '+$('#form-newsletter .newsletter-email').val()+'</li>' +
-                                       '<li>Job: '+$('#form-newsletter .newsletter-job').val()+'</li>' +
-                                       '<li>Message: '+$('#form-newsletter .newsletter-message').val()+'</li></ul>'},
+                    data: {
+                        toMail: $('#newsletter-toMail').val(), subject: $('#newsletter-subject').val(),
+                        content: '<ul><li>Name: ' + $('#form-newsletter .newsletter-name').val() + '</li>' +
+                        '<li>First Name: ' + $('#form-newsletter .newsletter-first-name').val() + '</li>' +
+                        '<li>Email: ' + $('#form-newsletter .newsletter-email').val() + '</li>' +
+                        '<li>Job: ' + $('#form-newsletter .newsletter-job').val() + '</li>' +
+                        '<li>Message: ' + $('#form-newsletter .newsletter-message').val() + '</li></ul>'
+                    },
                     jsonp: 'callback',
                     jsonpCallback: 'newsletter_callback',
-                    success: function(data){
-                        if(data.success){
+                    success: function (data) {
+                        if (data.success) {
                             alert('we will response to you as soon as possible')
                             $('#form-newsletter')[0].reset();
                         }
@@ -23270,6 +23280,16 @@ $(document).ready(function () {
                 });
             }
             e.preventDefault()
+        })
+        //video
+        $('#home .bottom-sub li.video').click(function () {
+            $('#home .mask-bottom').css("visibility", "visible");
+        })
+        $('#home .mask-bottom').click(function () {
+            $('#home .mask-bottom').css("visibility", "hidden");
+        })
+        $('#home .mask-bottom .glyphicon-remove').click(function () {
+            $('#home .mask-bottom').css("visibility", "hidden");
         })
     } else if ($("#page2").size() > 0) {
         $('#page2 .first-container .flexslider').flexslider({
@@ -23426,7 +23446,7 @@ $(document).ready(function () {
             animationSpeed: 1000,
             slideshowSpeed: 3000,
             slideshow: true,
-            animation: "slide"  
+            animation: "slide"
         });
         $('#page4 .third-container .bottom .icon').click(function () {
             $("#page4 .third-container .bottom .mask").css("visibility", "visible").css("opacity", 1);

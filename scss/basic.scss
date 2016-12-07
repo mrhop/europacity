@@ -19,17 +19,22 @@ $navbar-height: 70px !default;
 
 .icomoon-icon {
   font-family: "Icomoon Icon" !important;
-  img{
+  img {
     width: 16px;
   }
 }
 
-.glyphicon-remove{
+.glyphicon-remove {
   &:before {
     content: " ";
   }
-  background: url('../assets/images/home/icon/x.png')  no-repeat center ;
-  background-size: 15px 15px ;
+  background: url('../assets/images/home/icon/x.png') no-repeat center;
+  background-size: 15px 15px;
+}
+
+.glyphicon-remove-white {
+  background: url('../assets/images/home/icon/x.png') no-repeat center;
+  background-size: 15px 15px;
 }
 
 //.icomoon-icon-facebook {
@@ -346,6 +351,34 @@ html.home, body#home {
   background-color: rgba(33, 33, 33, 0.3);
   visibility: hidden;
   margin-top: $navbar-height;
+  .scroll-div {
+    .ps-scrollbar-y-rail {
+      background: #fff;
+      opacity: 1;
+      width: 12px;
+      right: 0;
+      .ps-scrollbar-y {
+        width: 12px;
+        opacity: 1;
+        background-color: #000;
+        border-radius: 0;
+      }
+      &:hover {
+        opacity: 1 !important;
+        .ps-scrollbar-y {
+          background-color: #000 !important;
+        }
+      }
+    }
+    &.ps-in-scrolling {
+      .ps-scrollbar-y-rail {
+        opacity: 1 !important;
+        .ps-scrollbar-y {
+          background-color: #000 !important;
+        }
+      }
+    }
+  }
 }
 
 .index-container .mask > .container-fluid {
@@ -407,7 +440,8 @@ html.home, body#home {
     height: 240px;
     overflow: hidden;
     @include transition(0.5s all);
-    margin-bottom: 1px;
+    margin-bottom: 30px;
+    margin-right: 13px;
     &:last-child {
       margin-bottom: 240px;
     }
@@ -776,18 +810,67 @@ html.home, body#home {
   min-height: 50px;
   box-shadow: -1px -3px 10px;
   background-color: white;
-  @include opacity(0.4);
+  //@include opacity(1);
   border: 0px;
+  &:hover {
+    @include opacity(1);
+  }
+  .bottom-sub {
+    clear: both;
+    text-align: center;
+    height: 30px;
+    background: #000;
+    li {
+      height: 100%;
+      &.video {
+        background: url(../assets/images/home/video1.jpg) no-repeat center center;
+        background-size: cover;
+        span.glyphicon-play-circle {
+          font-size: 40px;
+          margin-left: auto;
+          margin-right: auto;
+          @include opacity(1);
+          cursor: pointer;
+          color: #eee;
+        }
+      }
+    }
+  }
+  .mask-bottom {
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(00, 00, 00, 0.8);
+    cursor: pointer;
+    visibility: hidden;
+    .content {
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 54%;
+      height: 60%;
+      margin-top: 80px;
+      margin-left: -28%;
+      span.glyphicon-remove {
+        width: 15px;
+        height: 15px;
+        float: right;
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+  }
 }
 
 .navbar-fixed-bottom ul {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 0;
-}
-
-.navbar-fixed-bottom:hover {
-  @include opacity(0.8);
+  margin-bottom: 0px;
 }
 
 .navbar-fixed-bottom ul li {
@@ -808,13 +891,12 @@ html.home, body#home {
 }
 
 .navbar-fixed-bottom ul li a:active, .navbar-fixed-bottom ul li a.active {
-  background-color: black;
+  background-color: #666;
   color: white;
   @include opacity(1);
 }
 
 .navbar-fixed-bottom ul.pull-right a {
-  font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -1684,7 +1766,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
 }
 
 #page4 .second-update-container {
-  .flexslider .slides .item{
+  .flexslider .slides .item {
     h5 {
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
@@ -2200,7 +2282,7 @@ div.someone_say .bottom p.second, div.someone_say .bottom p.third {
   top: 35px;
   @include opacity(0);
   display: none;
-  &:before{
+  &:before {
     content: " ";
   }
   background: url(../assets/images/home/icon/right.png) no-repeat center;
