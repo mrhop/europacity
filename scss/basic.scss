@@ -670,6 +670,7 @@ html.home, body#home {
   float: left;
   display: none;
   overflow: hidden;
+  height: 180px;
   @media (max-width: $screen-sm-max) {
     width: 31%;
   }
@@ -678,6 +679,28 @@ html.home, body#home {
   }
   @media (max-width: $screen-phone) {
     width: 98%;
+  }
+
+  .hover {
+    width: 100%;
+    height: 180px;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    background: url(../assets/images/home/media/black_opacity_05.png) repeat center center;
+  }
+  &:hover .hover {
+    display: block;
+  }
+  img.circle-play{
+    position: absolute;
+    width: 40px!important;
+    height: 40px;
+    left:50%;
+    margin-left: -20px;
+    top:70px!important;
   }
 }
 
@@ -690,10 +713,16 @@ html.home, body#home {
 .portfolio img {
   top: 0px !important;
   position: relative;
-  max-width: 100%;
-  width: 100%;
-  opacity: 5;
+  //max-width: 100%;
+  //width: 100%;
+  width: auto !important;
+  opacity: 1;
+  max-width: inherit !important;
+  height: 180px;
   @include transition(all 300ms);
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .portfolio .label {

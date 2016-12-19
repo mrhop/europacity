@@ -23233,6 +23233,8 @@ $(document).ready(function () {
         })
         $('.portfoliolist').on('mixEnd', function (e, state) {
             $('div.portfolio:visible a.fancyShow').fancybox({
+                width: 600,
+                height: 400,
                 helpers: {
                     title: {
                         type: 'over'
