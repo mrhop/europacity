@@ -23054,6 +23054,28 @@ require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators');
 var utilFun = require("utilFun");
 $(document).ready(function () {
     if ($("#home").size() > 0) {
+
+        if (utilFun.browser.versions.mobile || utilFun.browser.versions.android || utilFun.browser.versions.ios) {
+            //手机端重置高度
+            var number = document.body.clientHeight / document.body.clientWidth * 1300;
+            $("#home").css("height", number + "px");
+            $(".index-container .mask>.container-fluid>.colum").css("height", (number - 160) + "px");
+            window.addEventListener('orientationchange', function(){
+                var timeout,
+                end = function () {
+                    clearTimeout(timeout);
+                    timeout = null;
+                };
+                timeout = setTimeout(function () {
+                    // The timeout happened first.
+                    $("#home").css("height", "100%");
+                    var number = document.body.clientHeight / document.body.clientWidth * 1300;
+                    $("#home").css("height", number + "px");
+                    $(".index-container .mask>.container-fluid>.colum").css("height", (number - 160) + "px");
+                    end();
+                }, 400);
+            });
+        }
         var home_section_flag = true;
         var media_first_flag = true;
         $('#home .flexslider').flexslider({
@@ -23081,8 +23103,8 @@ $(document).ready(function () {
 
         $('#home .scroll-div').perfectScrollbar({"maxScrollbarLength": 50});
         //！！！需要继续处理
-        $('#home .scroll-div .ps-scrollbar-y').mousedown(function(){
-            $('#home').one('mouseup', function(e){
+        $('#home .scroll-div .ps-scrollbar-y').mousedown(function () {
+            $('#home').one('mouseup', function (e) {
                 home_section_flag = false;
             });
         })
@@ -23210,7 +23232,7 @@ $(document).ready(function () {
                     home_section_flag = true;
                 });
             }
-            if(event.target.className == "mask" && !home_section_flag){
+            if (event.target.className == "mask" && !home_section_flag) {
                 home_section_flag = true;
             }
         })
@@ -23690,6 +23712,26 @@ module.exports = (function ($, window, undefined) {
                 $(object).text(parseInt(data/60)+":"+(data%60>=10?data%60:'0'+data%60));
             }
             $(object).data("value", data);
+        },
+        browser:{
+            versions:function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+                    iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                    weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+                    qq: u.match(/\sQQ/i) == " qq" //是否QQ
+                };
+            }(),
+            language:(navigator.browserLanguage || navigator.language).toLowerCase()
         }
     };
     return new $.UtilFun();
