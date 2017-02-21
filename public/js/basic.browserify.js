@@ -23053,19 +23053,22 @@ require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap');
 require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators');
 var utilFun = require("utilFun");
 $(document).ready(function () {
+    if (utilFun.browser.versions.mobile || utilFun.browser.versions.android || utilFun.browser.versions.ios) {
+        //手机端样式重置
+        $("body").addClass("navbar-mobile");
+    }
     if ($("#home").size() > 0) {
-
         if (utilFun.browser.versions.mobile || utilFun.browser.versions.android || utilFun.browser.versions.ios) {
             //手机端重置高度
             var number = document.body.clientHeight / document.body.clientWidth * 1300;
             $("#home").css("height", number + "px");
             $(".index-container .mask>.container-fluid>.colum").css("height", (number - 160) + "px");
-            window.addEventListener('orientationchange', function(){
+            window.addEventListener('orientationchange', function () {
                 var timeout,
-                end = function () {
-                    clearTimeout(timeout);
-                    timeout = null;
-                };
+                    end = function () {
+                        clearTimeout(timeout);
+                        timeout = null;
+                    };
                 timeout = setTimeout(function () {
                     // The timeout happened first.
                     $("#home").css("height", "100%");
@@ -23267,12 +23270,22 @@ $(document).ready(function () {
         //news detail shows content 
         $('.news-single .news-brief').click(function () {
             var parent = $(this).parent();
-            if (parent.height() == 240) {
-                //need to extend
-                parent.height(240 + $(parent).find('.news-content').outerHeight());
+            if ($("body").hasClass("navbar-mobile")) {
+                if (parent.height() == 240) {
+                    //need to extend
+                    parent.height(240 + 550 + $(parent).find('.news-content').outerHeight());
+                } else {
+                    parent.height(240);
+                }
             } else {
-                parent.height(240);
+                if (parent.height() == 240) {
+                    //need to extend
+                    parent.height(240 + $(parent).find('.news-content').outerHeight());
+                } else {
+                    parent.height(240);
+                }
             }
+
         })
         $('.news-single .news-brief .news_title a').click(function (e) {
             e.preventDefault()
