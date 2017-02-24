@@ -103,8 +103,6 @@ nav.navbar-fixed-top {
   }
 }
 
-
-
 .navbar .language {
   float: right;
   height: $navbar-height;
@@ -126,13 +124,16 @@ nav.navbar-fixed-top {
     }
   }
 }
+
 .navbar-inverse .navbar-nav li:hover {
   color: #fff;
   background-color: #090909;
 }
+
 .first-container {
   margin-top: $navbar-height;
 }
+
 body.navbar-mobile {
   nav.navbar.navbar-fixed-top {
     .container-fluid {
@@ -304,13 +305,20 @@ body.navbar-mobile {
       }
       .container-fluid.contact {
         .colum.col-xs-12 {
-          font-size: 38px;
+          h4 {
+            font-size: 22px;
+          }
+          p {
+            font-size: 22px;
+          }
+
         }
       }
     }
     .fancybox-wrap {
-      width: 1100px !important;
-      left: 100px !important;
+      width: 900px !important;
+      height: 601px !important;
+      left: 40px !important;
       .fancybox-inner {
         width: 100% !important;
         height: auto !important;
@@ -324,7 +332,220 @@ body.navbar-mobile {
       }
     }
   }
+  &#page2, &#page3, &#page4, &#page5, &#page6 {
+    h4 {
+      font-size: 44px !important;
+    }
+  }
+  &#page2, &#page3, &#page6 {
+    p.comment {
+      width: 90% !important;
+      font-size: 14px !important;
+      line-height: 16px !important;
+      margin-bottom: 20px !important;
+    }
+  }
+  &#page4, &#page5 {
+    p.comment {
+      width: 80% !important;
+      font-size: 32px !important;
+      line-height: 36px !important;
+    }
+  }
+  &#page2 {
+    .first-container {
+      .title {
+        font-size: 44px !important;
+      }
+      .flexslider {
+        .flex-caption {
+          width: 80%;
+          font-size: 14px;
+          line-height: 16px;
+          height: auto;
+        }
+      }
+      .control-nav {
+        li.control-label {
+          font-size: 38px !important;
+        }
+      }
+    }
+
+    .second-container {
+
+      div.video {
+        ul {
+          width: 80%;
+          li {
+            font-size: 16px;
+            line-height: 24px !important;
+          }
+        }
+      }
+    }
+    .fourth-container {
+      .central {
+        width: 100%;
+      }
+      ul {
+        li {
+          width: 40%;
+          margin: 20px 1%;
+        }
+      }
+    }
+    .sixth-container {
+      ul.control-nav {
+        li {
+          span {
+            font-size: 28px;
+          }
+        }
+      }
+      .flexslider {
+        .flex-caption {
+          ul {
+            li {
+              .title {
+                font-size: 28px;
+              }
+              .subtitle {
+                font-size: 36px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &#page3 {
+    .first-container {
+      img {
+        width: 90% !important;
+      }
+    }
+    .second-container {
+      .holder .unit {
+        font-size: 26px;
+        line-height: 30px;
+      }
+      .flexslider .flex-caption p strong {
+        font-size: 26px;
+        line-height: 30px;
+      }
+      ul.control-nav li p {
+        font-size: 22px;
+        line-height: 26px;
+      }
+    }
+    .third-container {
+      p.comment {
+        font-size: 32px !important;
+      }
+      ul.article {
+        li {
+          width: 28%;
+          margin: 0 1% 0 1%;
+          p.comment {
+            width: 100% !important;
+            font-size: 30px !important;
+            line-height: 34px !important;
+          }
+        }
+
+      }
+      ul.article h3 {
+        font-size: 32px !important;
+
+      }
+    }
+    .second-update-container {
+      height: 1380px;
+      .bg {
+        height: 1400px;
+        background-size: cover;
+      }
+      .content {
+        height: 1400px;
+      }
+    }
+  }
+  &#page4 {
+    .first-container {
+      ul {
+        width: 96%;
+        li {
+          width: 49%;
+          img {
+            width: 40% !important;
+          }
+          p.comment {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+  &#page5 {
+    .first-container {
+      .central {
+        span.text {
+          font-size: 36px;
+        }
+        .left-top span.text, .right-top span.text, .left-bottom span.text, .right-bottom span.text {
+          font-size: 32px;
+        }
+      }
+
+    }
+    .fourth-container {
+      .flexslider .control-nav li {
+        font-size: 26px;
+      }
+    }
+  }
+  &#page6 {
+    .first-update-container {
+      margin-top: 120px;
+      .center-img {
+        width: 95%;
+      }
+    }
+    .first-update2-container {
+      height: 1400px;
+      .bg {
+        height: 1400px;
+        background-size: cover;
+      }
+      .content {
+        .comment {
+          font-size: 32px !important;
+          line-height: 36px !important;
+        }
+        > ul {
+          width: 90%;
+          img {
+            width: 60% !important;
+          }
+        }
+      }
+    }
+
+    .first-container {
+      .flexslider {
+        li.item h5 {
+          font-size: 32px;
+        }
+      }
+      .control-nav li p {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+  }
 }
+
 html.home, body#home {
   margin: 0;
   padding: 0;
